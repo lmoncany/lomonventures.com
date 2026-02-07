@@ -1,0 +1,4 @@
+# robots.txt for lomonventures.com
+
+User-agent: *
+Allow: /
