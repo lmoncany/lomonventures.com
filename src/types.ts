@@ -2,7 +2,8 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  category: string;
+  image: string;
   url: string;
 }
 
@@ -12,4 +13,10 @@ export interface Profile {
   description: string;
   about: string;
   email: string;
+}
+
+export interface Stat {
+  label: string;
+  value: number;
+  suffix: string;
 }
