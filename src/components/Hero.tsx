@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 w-full pb-20 md:pb-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-20 w-full pb-20 md:pb-28">
         <div className="overflow-hidden mb-6">
           <motion.p
             initial={{ y: 40, opacity: 0 }}

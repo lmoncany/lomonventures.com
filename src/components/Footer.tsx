@@ -9,7 +9,7 @@ interface FooterProps {
 export default function Footer({ name, location, email }: FooterProps) {
   return (
     <footer className="border-t border-black/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20 py-12">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -7,7 +7,7 @@ interface AboutProps {
 export default function About({ about }: AboutProps) {
   return (
     <section id="about" className="py-28 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Image */}
           <motion.div

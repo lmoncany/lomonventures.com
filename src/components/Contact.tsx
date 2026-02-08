@@ -7,7 +7,7 @@ interface ContactProps {
 export default function Contact({ email }: ContactProps) {
   return (
     <section className="py-28 md:py-40">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20 text-center">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

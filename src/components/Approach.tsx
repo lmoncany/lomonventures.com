@@ -24,7 +24,7 @@ const pillars = [
 export default function Approach() {
   return (
     <section className="py-28 md:py-36 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
