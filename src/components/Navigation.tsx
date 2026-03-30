@@ -48,7 +48,7 @@ export default function Navigation({ name, email }: NavigationProps) {
           </a>
           <a
             href={`mailto:${email}`}
-            className="text-xs tracking-wider uppercase bg-black text-white px-5 py-2.5 hover:bg-black/80 transition-colors"
+            className="text-xs tracking-wider uppercase bg-brand text-white px-5 py-2.5 hover:bg-brand-light transition-colors"
           >
             Contact
           </a>

@@ -8,6 +8,11 @@ export default {
         "orange-accent": "#FF6B35",
         "light-gray": "#F8F9FA",
         "dark-gray": "#2D3748",
+        "brand": {
+          DEFAULT: "#1e3a5f",
+          light: "#2d4a6f",
+          dark: "#0f2a4f",
+        },
       },
       fontFamily: {
         "sf-pro": ['"SF Pro Text"', "Helvetica", "sans-serif"],

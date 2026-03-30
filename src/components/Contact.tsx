@@ -37,7 +37,7 @@ export default function Contact({ email }: ContactProps) {
         >
           <a
             href={`mailto:${email}`}
-            className="inline-block bg-black text-white text-sm font-medium tracking-[0.15em] uppercase px-10 py-4 hover:bg-black/80 transition-colors"
+            className="inline-block bg-brand text-white text-sm font-medium tracking-[0.15em] uppercase px-10 py-4 hover:bg-brand-light transition-colors"
           >
             {email}
           </a>
