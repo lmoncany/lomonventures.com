@@ -1,11 +1,11 @@
-import type { Profile, Project, Stat } from "./types";
+import type { Profile, Project, Stat, JobOpening } from "./types";
 
 export const profile: Profile = {
   name: "LOMON VENTURES",
-  location: "Italy",
+  location: "Europe",
   description: "Building digital products for niche markets",
   about:
-    "A portfolio of software products built by Loic Moncany. Based in Italy. Previously: 6 years running a digital agency in Malta, 15+ years in web development.",
+    "We build and scale B2B software products for underserved verticals. Our portfolio spans PropTech, automotive, and lead generation — each product designed to dominate its niche. Remote-first, profitable, and growing.",
   email: "hello@lomonventures.com",
 };
 
@@ -70,5 +70,24 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=500&fit=crop&q=80",
     url: "https://aianswer.to",
+  },
+];
+
+export const jobs: JobOpening[] = [
+  {
+    id: "1",
+    title: "B2B SaaS Sales",
+    type: "Full-time",
+    location: "Remote (EU)",
+    description:
+      "Drive revenue growth across our PropTech products. You'll own the full sales cycle — from outreach to close — for ListingVid and EST8. Experience selling to real estate professionals preferred.",
+  },
+  {
+    id: "2",
+    title: "AI-First Developer",
+    type: "Full-time",
+    location: "Remote",
+    description:
+      "Build AI-powered features across our product portfolio. We work with LLMs, computer vision, and generative AI. You should be comfortable shipping fast and iterating based on user feedback.",
   },
 ];

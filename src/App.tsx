@@ -5,9 +5,10 @@ import About from "./components/About";
 import Stats from "./components/Stats";
 import ProjectsGrid from "./components/ProjectsGrid";
 import Approach from "./components/Approach";
+import Careers from "./components/Careers";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { profile, projects, stats } from "./data";
+import { profile, projects, stats, jobs } from "./data";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Stats stats={stats} />
       <ProjectsGrid projects={projects} />
       <Approach />
+      <Careers jobs={jobs} email={profile.email} />
       <Contact email={profile.email} />
       <Footer
         name={profile.name}

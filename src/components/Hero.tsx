@@ -24,7 +24,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xs font-medium tracking-[0.3em] uppercase text-black/40 mb-8"
           >
-            Venture Studio / Italy
+            B2B Software Company
           </motion.p>
         </div>
 
@@ -61,8 +61,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 1.0 }}
             className="text-base md:text-lg text-black/50 max-w-md leading-relaxed"
           >
-            We build, launch, and scale software products that serve
-            underserved markets.
+            We build and scale vertical SaaS products for industries 
+            that deserve better software.
           </motion.p>
 
           <motion.a

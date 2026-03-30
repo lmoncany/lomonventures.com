@@ -43,8 +43,8 @@ export default function About({ about }: AboutProps) {
               viewport={{ once: true, margin: "-100px" }}
               className="text-4xl md:text-5xl font-light leading-tight tracking-tight mb-8"
             >
-              We identify gaps.{" "}
-              <span className="text-black/30">Then we build.</span>
+              Vertical focus.{" "}
+              <span className="text-black/30">Global ambition.</span>
             </motion.h2>
 
             <motion.div
@@ -72,8 +72,8 @@ export default function About({ about }: AboutProps) {
               viewport={{ once: true, margin: "-100px" }}
               className="text-base text-black/50 leading-relaxed"
             >
-              Each product is designed to solve a real problem in an underserved market,
-              from classic car valuations to AI-powered real estate tools.
+              From AI-powered video generation for real estate agents to valuation 
+              tools for classic car collectors — we go deep where others go wide.
             </motion.p>
           </div>
         </div>

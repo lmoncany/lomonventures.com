@@ -20,3 +20,11 @@ export interface Stat {
   value: number;
   suffix: string;
 }
+
+export interface JobOpening {
+  id: string;
+  title: string;
+  type: string;
+  location: string;
+  description: string;
+}

@@ -43,6 +43,9 @@ export default function Navigation({ name, email }: NavigationProps) {
           <a href="#portfolio" className="text-xs tracking-wider uppercase text-black/50 hover:text-black transition-colors">
             Portfolio
           </a>
+          <a href="#careers" className="text-xs tracking-wider uppercase text-black/50 hover:text-black transition-colors">
+            Careers
+          </a>
           <a
             href={`mailto:${email}`}
             className="text-xs tracking-wider uppercase bg-black text-white px-5 py-2.5 hover:bg-black/80 transition-colors"
