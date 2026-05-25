@@ -1,6 +1,5 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-import Marquee from "./components/Marquee";
 import About from "./components/About";
 import Stats from "./components/Stats";
 import ProjectsGrid from "./components/ProjectsGrid";
@@ -13,13 +12,12 @@ import { profile, projects, stats, jobs } from "./data";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-[#030303] text-[#f7f4ff]">
       <Navigation name={profile.name} email={profile.email} />
       <Hero />
-      <Marquee />
-      <About about={profile.about} />
       <Stats stats={stats} />
       <ProjectsGrid projects={projects} />
+      <About about={profile.about} />
       <Approach />
       <Founder />
       <Careers jobs={jobs} email={profile.email} />

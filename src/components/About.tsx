@@ -1,81 +1,35 @@
-import { motion } from "framer-motion";
-
 interface AboutProps {
   about: string;
 }
 
 export default function About({ about }: AboutProps) {
   return (
-    <section id="about" className="py-28 md:py-36">
-      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="aspect-[4/5] overflow-hidden bg-black/5"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=1000&fit=crop&q=80"
-              alt="Workspace"
-              className="w-full h-full object-cover grayscale"
-            />
-          </motion.div>
-
-          {/* Text */}
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-xs font-medium tracking-[0.3em] uppercase text-black/40 block mb-6"
-            >
-              About
-            </motion.span>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-4xl md:text-5xl font-light leading-tight tracking-tight mb-8"
-            >
-              Vertical focus.{" "}
-              <span className="text-black/30">Global ambition.</span>
-            </motion.h2>
-
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: 80 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="h-px bg-black/30 mb-8"
-            />
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-base text-black/50 leading-relaxed mb-6"
-            >
-              {about}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-base text-black/50 leading-relaxed"
-            >
-              From AI-powered video generation for real estate agents to valuation 
-              tools for classic car collectors — we go deep where others go wide.
-            </motion.p>
+    <section id="fit" className="py-16 md:py-24">
+      <div className="section-shell">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="mono mb-3 text-xs uppercase text-[#b86cff]">Fit</p>
+          <h2 className="text-4xl font-bold text-white md:text-6xl">For operators with a real edge.</h2>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-[2rem] border border-[#b86cff]/40 bg-[#b86cff]/10 p-7 md:p-8">
+            <h3 className="mb-5 text-2xl font-bold text-white">This is for you if</h3>
+            <ul className="space-y-4 text-sm leading-relaxed text-white/65">
+              <li>You know a specific market and can explain the workflow pain clearly.</li>
+              <li>You want a small product shipped quickly, then improved from user feedback.</li>
+              <li>You value product judgment as much as development speed.</li>
+            </ul>
           </div>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 md:p-8">
+            <h3 className="mb-5 text-2xl font-bold text-white">This is not for you if</h3>
+            <ul className="space-y-4 text-sm leading-relaxed text-white/45">
+              <li>You need a large agency, a full-time developer, or a six-month roadmap.</li>
+              <li>You want every possible feature included in the first version.</li>
+              <li>You have an idea, but no market access, customer insight, or urgency.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-8 rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-center text-sm leading-relaxed text-white/50">
+          {about}
         </div>
       </div>
     </section>

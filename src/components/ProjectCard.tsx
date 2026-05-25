@@ -12,52 +12,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      viewport={{ once: true, margin: "-80px" }}
-      className="group block"
+      transition={{ duration: 0.4, delay: index * 0.07 }}
+      viewport={{ once: true }}
+      className="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] transition-colors hover:border-[#b86cff]"
     >
-      {/* Image */}
-      <div className="aspect-[16/10] overflow-hidden bg-black/5 mb-5 relative">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-      </div>
-
-      {/* Content */}
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-black/30 block mb-1.5">
-            {project.category}
-          </span>
-          <h3 className="text-lg font-medium text-black mb-1 group-hover:underline underline-offset-4 decoration-black/20">
-            {project.title}
-          </h3>
-          <p className="text-sm text-black/50 leading-relaxed">
-            {project.description}
-          </p>
+      <img src={project.image} alt={project.title} className="h-64 w-full object-cover opacity-80 grayscale transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100 group-hover:grayscale-0" loading="lazy" />
+      <div className="p-6">
+        <div className="mb-3 flex items-start justify-between gap-3">
+          <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+          <span className="mono rounded-full bg-[#b86cff]/15 px-3 py-1 text-[10px] uppercase text-[#d9b4ff]">{project.category}</span>
         </div>
-        <span className="shrink-0 mt-5 text-black/20 group-hover:text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path d="M4 12L12 4M12 4H6M12 4V10" />
-          </svg>
-        </span>
+        <p className="text-sm leading-relaxed text-white/50">{project.description}</p>
       </div>
     </motion.a>
   );

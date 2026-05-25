@@ -1,47 +1,52 @@
-import { motion } from "framer-motion";
-
 interface ContactProps {
   email: string;
 }
 
 export default function Contact({ email }: ContactProps) {
   return (
-    <section className="py-28 md:py-40">
-      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20 text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-xs font-medium tracking-[0.3em] uppercase text-black/40 block mb-8"
-        >
-          Get in touch
-        </motion.span>
+    <section id="contact" className="py-16 md:py-24">
+      <div className="section-shell">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="mono mb-3 text-xs uppercase text-[#b86cff]">Start here</p>
+          <h2 className="mb-4 text-4xl font-bold text-white md:text-6xl">Two ways to work with Lomon.</h2>
+          <p className="mx-auto max-w-2xl text-white/50">
+            Start small if the product is still fuzzy. Move into a focused build when the workflow is clear.
+          </p>
+        </div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-12"
-        >
-          Have an idea?{" "}
-          <span className="text-black/30">Let's talk.</span>
-        </motion.h2>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 md:p-8">
+            <p className="mono mb-4 text-xs uppercase text-[#d9b4ff]">Start here</p>
+            <h3 className="mb-3 text-2xl font-bold text-white">Product Scope Sprint</h3>
+            <p className="mb-6 text-sm leading-relaxed text-white/50">
+              A short strategy sprint to define the product, cut unnecessary features, and decide what should be built first.
+            </p>
+            <ul className="mb-6 space-y-3 text-sm text-white/60">
+              <li>Clear MVP scope</li>
+              <li>User flow and feature priority</li>
+              <li>Technical plan for the first build</li>
+            </ul>
+            <a href={`mailto:${email}?subject=Product%20Scope%20Sprint`} className="inline-flex rounded-full border border-white/15 px-5 py-3 font-bold text-white hover:border-[#b86cff] transition-colors">
+              Scope the product
+            </a>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <a
-            href={`mailto:${email}`}
-            className="inline-block bg-brand text-white text-sm font-medium tracking-[0.15em] uppercase px-10 py-4 hover:bg-brand-light transition-colors"
-          >
-            {email}
-          </a>
-        </motion.div>
+          <div className="rounded-[2rem] border border-[#b86cff] bg-[#b86cff]/10 p-7 shadow-[0_0_60px_rgba(184,108,255,0.12)] md:p-8">
+            <p className="mono mb-4 text-xs uppercase text-[#d9b4ff]">Focused build</p>
+            <h3 className="mb-3 text-2xl font-bold text-white">Niche MVP Build</h3>
+            <p className="mb-6 text-sm leading-relaxed text-white/65">
+              A founder-led build for one product, one user type, and one valuable workflow that can be validated quickly.
+            </p>
+            <ul className="mb-6 space-y-3 text-sm text-white/70">
+              <li>UX, product, and development</li>
+              <li>Deployment and handover</li>
+              <li>Next-step roadmap from real feedback</li>
+            </ul>
+            <a href={`mailto:${email}?subject=Niche%20MVP%20Build`} className="inline-flex rounded-full bg-[#ead7ff] px-5 py-3 font-bold text-black hover:bg-white transition-colors">
+              Start a build
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

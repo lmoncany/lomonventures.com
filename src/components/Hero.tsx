@@ -1,90 +1,64 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const words = ["Digital", "Products", "for", "Niche", "Markets"];
-
   return (
-    <section className="relative h-screen flex items-end overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop&q=80"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-white/80" />
-      </div>
+    <section id="services" className="relative min-h-screen overflow-hidden pt-28 md:pt-36">
+      <div className="absolute inset-0 hero-spotlight" />
+      <div className="absolute inset-x-0 top-0 h-64 grid-stage opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+      <div className="absolute inset-x-0 bottom-0 h-72 grid-stage opacity-35 [transform:perspective(520px)_rotateX(62deg)] [transform-origin:bottom] [mask-image:linear-gradient(to_top,black,transparent)]" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-20 w-full pb-20 md:pb-28">
-        <div className="overflow-hidden mb-6">
-          <motion.p
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xs font-medium tracking-[0.3em] uppercase text-black/40 mb-8"
-          >
-            B2B Software Company
-          </motion.p>
-        </div>
+      <div className="section-shell relative z-10 flex min-h-[calc(100vh-7rem)] flex-col items-center justify-center text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mono mb-5 text-xs uppercase tracking-[0.1em] text-[#d9b4ff]"
+        >
+          Founder-led product studio
+        </motion.p>
 
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-light leading-[0.9] tracking-tight mb-10">
-          {words.map((word, i) => (
-            <span key={i} className="inline-block overflow-hidden mr-[0.25em]">
-              <motion.span
-                className={`inline-block ${i >= 3 ? "text-black/30" : "text-black"}`}
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.3 + i * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                {word}
-              </motion.span>
-            </span>
-          ))}
-        </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05 }}
+          className="mx-auto mb-5 max-w-6xl text-5xl font-extrabold leading-[1.05] text-white md:text-7xl lg:text-8xl"
+        >
+          Niche software <span className="text-[#b86cff]">MVPs</span> built in weeks.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="mx-auto max-w-3xl text-base font-semibold leading-relaxed text-[#d9b4ff] md:text-lg"
+        >
+          For founders and operators who know a market, feel the pain, and need a focused product live fast.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.13 }}
+          className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-white/45"
+        >
+          I turn a specific workflow into a launch-ready MVP so you can validate with real users before burning months and money.
+        </motion.p>
 
         <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="h-px bg-black/20 mb-8"
-        />
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.16 }}
+          className="mt-9 flex flex-col items-center justify-center gap-4 text-sm text-white/70 md:flex-row md:gap-10"
+        >
+          <span><strong className="text-white">5</strong> products shipped</span>
+          <span><strong className="text-white">15+</strong> years in tech</span>
+          <span><strong className="text-white">Founder-led</strong> builds</span>
+        </motion.div>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="text-base md:text-lg text-black/50 max-w-md leading-relaxed"
-          >
-            We build and scale vertical SaaS products for industries 
-            that deserve better software.
-          </motion.p>
-
-          <motion.a
-            href="#portfolio"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            className="text-xs font-medium tracking-[0.2em] uppercase text-black/50 hover:text-black transition-colors flex items-center gap-3 group"
-          >
-            <span>View Portfolio</span>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="group-hover:translate-y-1 transition-transform duration-300"
-            >
-              <path d="M12 5v14M5 12l7 7 7-7" />
-            </svg>
-          </motion.a>
+        <div className="mt-9 w-full max-w-md">
+          <a href="#contact" className="group flex items-center justify-between rounded-full bg-[#ead7ff] p-2 pl-7 text-base font-bold text-black shadow-[0_0_44px_rgba(184,108,255,0.35)] hover:bg-white transition-colors">
+            Book a 20-min fit call
+            <span className="grid h-12 w-12 place-items-center rounded-full bg-black text-lg text-[#ead7ff] transition-transform group-hover:translate-x-1">-&gt;</span>
+          </a>
         </div>
       </div>
     </section>
