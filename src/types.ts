@@ -13,6 +13,7 @@ export interface Profile {
   description: string;
   about: string;
   email: string;
+  image: string;
 }
 
 export interface Stat {

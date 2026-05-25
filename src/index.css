@@ -1,15 +1,40 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap');
 
 :root {
   --bg: #030303;
+  --bg-rgb: 3, 3, 3;
   --surface: #0b0b0e;
   --surface-soft: #15131a;
   --line: #25222f;
   --ink: #f7f4ff;
   --muted: #8f899b;
+  --subtle: rgba(255, 255, 255, 0.04);
+  --subtle-strong: rgba(255, 255, 255, 0.1);
   --accent: #b86cff;
   --accent-bright: #d9b4ff;
+  --accent-alt: #4fd1c5;
+  --accent-warm: #f8b84e;
+  --accent-contrast: #08050c;
+  --nav-bg: rgba(16, 16, 20, 0.9);
+}
+
+[data-theme="light"] {
+  --bg: #f8f6fb;
+  --bg-rgb: 248, 246, 251;
+  --surface: #ffffff;
+  --surface-soft: #eee7f8;
+  --line: #ded3eb;
+  --ink: #18121f;
+  --muted: #6f6678;
+  --subtle: rgba(24, 18, 31, 0.045);
+  --subtle-strong: rgba(24, 18, 31, 0.1);
+  --accent: #8f3ff2;
+  --accent-bright: #5f18bf;
+  --accent-alt: #0ea5a4;
+  --accent-warm: #d97706;
+  --accent-contrast: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.82);
 }
 
 @layer base {
@@ -19,7 +44,7 @@
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -49,14 +74,134 @@
 
 .grid-stage {
   background:
-    linear-gradient(rgba(184, 108, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(184, 108, 255, 0.18) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--accent) 18%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 18%, transparent) 1px, transparent 1px);
   background-size: 52px 52px;
 }
 
 .hero-spotlight {
   background:
-    radial-gradient(ellipse at 15% 0%, rgba(184, 108, 255, 0.5), transparent 30%),
-    radial-gradient(ellipse at 85% 0%, rgba(184, 108, 255, 0.45), transparent 30%),
-    radial-gradient(ellipse at 50% 105%, rgba(184, 108, 255, 0.16), transparent 36%);
+    radial-gradient(ellipse at 15% 0%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 30%),
+    radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--accent) 38%, transparent), transparent 30%),
+    radial-gradient(ellipse at 50% 105%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 36%);
+}
+
+.theme-root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.text-main {
+  color: var(--ink);
+}
+
+.text-muted {
+  color: color-mix(in srgb, var(--muted) 78%, transparent);
+}
+
+.text-soft {
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-accent-soft {
+  color: var(--accent-bright);
+}
+
+.panel {
+  border: 1px solid var(--subtle-strong);
+  background: var(--subtle);
+}
+
+.panel-accent {
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.panel-solid {
+  border: 1px solid var(--subtle-strong);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+}
+
+.nav-pill {
+  border: 1px solid var(--subtle-strong);
+  background: var(--nav-bg);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.cta-primary {
+  background: var(--accent-bright);
+  color: var(--accent-contrast);
+  box-shadow: 0 0 36px color-mix(in srgb, var(--accent) 34%, transparent);
+}
+
+.cta-primary:hover {
+  background: color-mix(in srgb, var(--accent-bright) 84%, white);
+}
+
+.cta-dot {
+  background: var(--accent-contrast);
+  color: var(--accent-bright);
+}
+
+[data-theme="light"] .cta-dot {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.theme-toggle {
+  border: 1px solid var(--subtle-strong);
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+  color: var(--ink);
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  height: 2.35rem;
+  width: 2.35rem;
+  place-items: center;
+  color: var(--accent-contrast);
+}
+
+.brand-mark__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background:
+    conic-gradient(from 210deg, var(--accent-bright), var(--accent-alt), var(--accent-warm), var(--accent-bright));
+  box-shadow: 0 0 28px color-mix(in srgb, var(--accent) 32%, transparent);
+}
+
+.brand-mark__ring::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  background: var(--bg);
+}
+
+.brand-mark__core {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  height: 1.55rem;
+  width: 1.55rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent-bright);
+}
+
+.founder-panel {
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--subtle-strong));
+  background:
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent-alt) 16%, transparent), transparent 34%),
+    radial-gradient(circle at 12% 100%, color-mix(in srgb, var(--accent-warm) 13%, transparent), transparent 30%),
+    color-mix(in srgb, var(--surface) 78%, transparent);
+  box-shadow: 0 34px 90px color-mix(in srgb, var(--accent) 14%, transparent);
 }

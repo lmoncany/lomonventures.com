@@ -1,82 +1,51 @@
-import { motion } from "framer-motion";
+import type { SiteContent } from "../i18n";
+import Icon from "./Icon";
 
-export default function Founder() {
+interface FounderProps {
+  copy: SiteContent["founder"];
+  image: string;
+}
+
+export default function Founder({ copy, image }: FounderProps) {
   return (
-    <section className="py-28 md:py-36 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="lg:col-span-4"
-          >
-            <div className="aspect-[3/4] overflow-hidden bg-black/5 max-w-sm mx-auto lg:mx-0">
-              <img
-                src="/images/founder.jpg"
-                alt="Loïc Moncany, Founder"
-                className="w-full h-full object-cover"
-              />
+    <section id="founder" className="py-16 md:py-24">
+      <div className="section-shell">
+        <div className="founder-panel grid overflow-hidden rounded-[2.25rem] md:grid-cols-[0.9fr_1.1fr]">
+          <div className="relative min-h-[460px] overflow-hidden">
+            <img
+              src={image}
+              alt={copy.imageAlt}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-white/15 bg-black/45 p-5 text-white backdrop-blur">
+              <p className="mono mb-2 text-[10px] uppercase tracking-[0.08em] text-white/60">
+                {copy.cardLabel}
+              </p>
+              <p className="text-2xl font-black">{copy.name}</p>
+              <p className="text-sm text-white/70">{copy.role}</p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Quote */}
-          <div className="lg:col-span-8">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="text-xs font-medium tracking-[0.3em] uppercase text-black/40 block mb-8"
-            >
-              A Word from the Founder
-            </motion.span>
+          <div className="relative p-7 md:p-10 lg:p-12">
+            <div className="absolute right-8 top-8 h-24 w-24 rounded-full bg-[var(--accent-alt)] opacity-25 blur-3xl" />
+            <p className="mono mb-3 text-xs uppercase text-accent">{copy.eyebrow}</p>
+            <h2 className="mb-5 max-w-2xl text-4xl font-extrabold leading-tight text-main md:text-5xl">
+              {copy.title}
+            </h2>
+            <p className="mb-5 text-base leading-relaxed text-muted md:text-lg">{copy.body}</p>
+            <p className="mb-8 text-base leading-relaxed text-soft">{copy.note}</p>
 
-            <motion.blockquote
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="mb-10"
-            >
-              <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed tracking-tight text-black/80 mb-8">
-                "I started Lomon Ventures with a simple belief: the best software 
-                comes from deeply understanding a specific market. We don't chase 
-                trends — we find industries that deserve better tools, then we build them."
-              </p>
-              <p className="text-base text-black/50 leading-relaxed max-w-2xl">
-                After 15 years in tech and running a digital agency, I've seen what works 
-                and what doesn't. Big platforms serve everyone poorly. Focused products 
-                serve their users well. That's what we do.
-              </p>
-            </motion.blockquote>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="flex items-center gap-4"
-            >
-              <div>
-                <p className="font-medium text-black">Loïc Moncany</p>
-                <p className="text-sm text-black/40">Founder & CEO</p>
-              </div>
-              <div className="hidden sm:block w-px h-10 bg-black/10 mx-4" />
-              <a
-                href="https://linkedin.com/in/loicmoncany"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:flex items-center gap-2 text-sm text-black/40 hover:text-black transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                <span>Connect</span>
-              </a>
-            </motion.div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {copy.highlights.map((item) => (
+                <div className="panel-solid rounded-3xl p-4" key={item.label}>
+                  <Icon name="spark" className="mb-3 h-5 w-5 text-accent-soft" />
+                  <p className="text-2xl font-black text-main">{item.value}</p>
+                  <p className="text-xs leading-relaxed text-muted">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
