@@ -66,22 +66,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function PocHomepage() {
   return (
-    <div className="poc-site">
-      <header className="poc-nav">
-        <div className="poc-shell poc-nav__inner">
-          <a href="#" className="poc-brand" aria-label="Lomon Ventures home">
-            <span className="poc-brand__mark"><BrandMark /></span>
-            <span>Lomon Ventures</span>
-          </a>
-          <nav className="poc-nav__links" aria-label="Main navigation">
-            <a href="#how-it-works">How it works</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#pricing">Pricing</a>
-          </nav>
-          <Cta compact />
-        </div>
-      </header>
-
+    <>
       <main>
         <section className="poc-hero">
           <div className="poc-hero__grid" />
@@ -261,18 +246,6 @@ export default function PocHomepage() {
         </section>
       </main>
 
-      <footer className="poc-footer">
-        <div className="poc-shell poc-footer__inner">
-          <p><strong>Lomon Ventures</strong> · Software for founders who know the problem</p>
-          <nav>
-            <a href="#how-it-works">How it works</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <p>© 2026</p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
