@@ -1,5 +1,4 @@
 import type { SiteContent } from "../i18n";
-import Icon from "./Icon";
 
 interface ApproachProps {
   copy: SiteContent["approach"];
@@ -14,20 +13,18 @@ export default function Approach({ copy }: ApproachProps) {
           <h2 className="mb-4 text-4xl font-bold text-main md:text-6xl">{copy.title}</h2>
           <p className="text-muted">{copy.body}</p>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {copy.steps.map((step, index) => (
-            <div key={step.title} className="panel rounded-[2rem] p-7 transition-colors hover:border-[var(--accent)]">
-              <div className="cta-primary mb-5 grid h-12 w-12 place-items-center rounded-full text-lg font-black">
-                {index + 1}
-              </div>
+            <div key={step.title} className="process-card group">
+              <p className="mb-4 text-center text-sm font-black text-[var(--accent-warm)]">{step.period}</p>
               <h3 className="mb-3 text-2xl font-bold text-main">{step.title}</h3>
-              <p className="mb-6 text-sm leading-relaxed text-muted">{step.description}</p>
-              <div className="panel-solid rounded-2xl p-4">
-                <p className="mono mb-2 inline-flex items-center gap-2 text-[10px] uppercase text-accent-soft">
-                  <Icon name="spark" className="h-3.5 w-3.5" />
-                  {copy.deliverable}
-                </p>
-                <p className="text-xs leading-relaxed text-muted">{step.marker}</p>
+              <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-muted">{step.description}</p>
+
+              <div className={`process-visual process-visual--${(index % 4) + 1}`}>
+                <span className="process-chip process-chip--dark">{step.marker}</span>
+                <span className="process-chip process-chip--accent">{copy.deliverable}</span>
+                <span className="process-cursor" />
+                <span className="process-line" />
               </div>
             </div>
           ))}

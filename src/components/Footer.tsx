@@ -14,11 +14,24 @@ interface FooterProps {
 export default function Footer({ name, location, email, locale, page, copy }: FooterProps) {
   const homePath = getLocalizedPath(locale);
   const sectionHref = (hash: string) => `${homePath === "/" ? "" : homePath}#${hash}`;
+  const legalLinks = [
+    { href: getLocalizedPath(locale, "privacy"), label: copy.secondary.privacy.label },
+    { href: getLocalizedPath(locale, "terms"), label: copy.secondary.terms.label },
+    { href: getLocalizedPath(locale, "cookies"), label: copy.secondary.cookies.label },
+  ];
 
   return (
     <footer className="border-t border-[var(--subtle-strong)] py-10 md:py-14">
       <div className="section-shell">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_0.8fr_0.8fr_0.8fr]">
+        <div className="footer-strip mb-10 overflow-hidden rounded-[2rem]">
+          <div className="footer-strip__track">
+            {[...copy.footer.strip, ...copy.footer.strip].map((item, index) => (
+              <span className="footer-strip__item" key={`${item}-${index}`}>{item}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-10 md:grid-cols-[1.5fr_0.8fr_0.8fr]">
           <div>
             <a href={homePath} className="mb-4 inline-flex items-center gap-3 text-base font-bold text-main">
               <BrandMark />
@@ -37,16 +50,6 @@ export default function Footer({ name, location, email, locale, page, copy }: Fo
               <a href={sectionHref("services")} className="hover:text-accent-soft">{copy.nav.services}</a>
               <a href={sectionHref("portfolio")} className="hover:text-accent-soft">{copy.nav.portfolio}</a>
               <a href={sectionHref("approach")} className="hover:text-accent-soft">{copy.nav.process}</a>
-              <a href={sectionHref("contact")} className="hover:text-accent-soft">{copy.nav.contact}</a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="mono mb-4 text-xs uppercase text-accent-soft">{copy.footer.legal}</h3>
-            <div className="grid gap-3 text-sm text-muted">
-              <a href={getLocalizedPath(locale, "privacy")} className="hover:text-accent-soft">{copy.secondary.privacy.label}</a>
-              <a href={getLocalizedPath(locale, "terms")} className="hover:text-accent-soft">{copy.secondary.terms.label}</a>
-              <a href={getLocalizedPath(locale, "cookies")} className="hover:text-accent-soft">{copy.secondary.cookies.label}</a>
             </div>
           </div>
 
@@ -68,9 +71,14 @@ export default function Footer({ name, location, email, locale, page, copy }: Fo
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col justify-between gap-3 border-t border-[var(--subtle-strong)] pt-6 text-xs text-muted md:flex-row">
+        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-[var(--subtle-strong)] pt-6 text-xs text-muted md:flex-row md:items-center">
           <p>{name} · {location}</p>
-          <p>© {new Date().getFullYear()} {copy.footer.copyright}</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p>© {new Date().getFullYear()} {copy.footer.copyright}</p>
+            {legalLinks.map((link) => (
+              <a href={link.href} className="hover:text-accent-soft" key={link.href}>{link.label}</a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

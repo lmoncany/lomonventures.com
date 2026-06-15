@@ -75,7 +75,7 @@ export const content = {
       process: "Process",
       fit: "Profil",
       contact: "Contact",
-      cta: "Tell me your idea",
+      cta: "Schedule a call",
       light: "Light",
       dark: "Dark",
       language: "Language",
@@ -85,10 +85,17 @@ export const content = {
       title: "Software products for founders who know the market, not the code.",
       accent: "not the code.",
       intro:
-        "You bring the customer insight, workflow, or product idea. Lomon Ventures turns it into a focused first version you can launch, test, and improve.",
+        "You know the customers, the operations, the edge cases, and the workflow that keeps breaking. Lomon Ventures turns that business knowledge into a focused first product.",
       support:
-        "Built like an indie founder: small scope, fast launch, real feedback. Delivered with the discipline of 15+ years building for the web.",
-      cta: "Tell me what you want to build",
+        "The goal: clarify the use case, build the useful version, launch it, and learn from real users without losing months in agency theatre.",
+      cta: "Schedule a call",
+      whatsappCta: "WhatsApp",
+      callSubject: "Schedule a call with Lomon Ventures",
+      whatsappMessage:
+        "Hi Loic, I have a business workflow or product idea I would like to turn into software. Can we discuss it?",
+      badges: ["Business workflow", "First useful version", "Founder-led"],
+      logoIntro: "+ more real products shipped",
+      logos: ["ListingVid", "EST8", "OhMyLead", "La Côte Vintage", "Perfect Skin", "AI Answer"],
       proof: [
         { value: "6", label: "products launched" },
         { value: "15+", label: "years in tech" },
@@ -162,22 +169,32 @@ export const content = {
       deliverable: "Deliverable",
       steps: [
         {
-          title: "Translate",
+          period: "Week 1",
+          title: "Brief & Scope",
           description:
-            "We turn your business context, manual process, and market insight into a product shape.",
-          marker: "Core workflow, target user, and product boundary.",
+            "We map the business workflow, the target user, and the exact outcome the product must deliver.",
+          marker: "Workflow mapped",
         },
         {
-          title: "Cut",
+          period: "Week 2",
+          title: "Prototype & Validation",
           description:
-            "We remove the expensive, distracting, and unproven parts before they waste build time.",
-          marker: "First-version feature set and build plan.",
+            "We turn the idea into screens, user flows, and a build plan so every feature has a reason to exist.",
+          marker: "Scope validated",
         },
         {
-          title: "Ship",
+          period: "Weeks 3-4",
+          title: "Build & Integrate",
           description:
-            "I design and build the first usable version, then use feedback to decide what comes next.",
-          marker: "Launched product and next-step roadmap.",
+            "I build the first usable version, connect the core tools, and keep the scope focused on launch.",
+          marker: "Build in progress",
+        },
+        {
+          period: "Launch",
+          title: "Delivery & Next Priorities",
+          description:
+            "You get a live product, a handover, and a clear next-step roadmap based on real usage.",
+          marker: "Ready to publish",
         },
       ],
     },
@@ -294,6 +311,7 @@ export const content = {
       legal: "Legal",
       languages: "Languages",
       copyright: "All rights reserved.",
+      strip: ["Workflow software", "First product build", "Founder-led", "Business tools", "SaaS MVP", "Europe"],
     },
   },
   fr: {
@@ -308,20 +326,27 @@ export const content = {
       process: "Process",
       fit: "Fit",
       contact: "Contact",
-      cta: "Parler de mon projet",
+      cta: "Planifier un appel",
       light: "Clair",
       dark: "Sombre",
       language: "Langue",
     },
     hero: {
       eyebrow: "Studio logiciel indépendant",
-      title: "Des produits logiciels pour les fondateurs qui maîtrisent leur marché, pas le code.",
+      title: "Transformez votre expertise métier en logiciel utilisable.",
       accent: "pas le code.",
       intro:
-        "Vous connaissez vos clients, vos contraintes métier, le workflow à simplifier. Lomon Ventures transforme ce contexte en première version claire, testable et prête à lancer.",
+        "Vous connaissez vos clients, vos opérations, les cas particuliers et le process qui coince. Lomon Ventures transforme cette connaissance terrain en premier produit logiciel.",
       support:
-        "Une approche d'indie founder : périmètre serré, lancement rapide, retours terrain. Avec l'exigence de 15+ ans passés à construire pour le web.",
-      cta: "Racontez-moi ce que vous voulez construire",
+        "Le but : clarifier le cas d'usage, construire la version utile, la mettre en ligne et apprendre avec de vrais utilisateurs. Sans perdre trois mois en cadrage.",
+      cta: "Planifier un appel",
+      whatsappCta: "WhatsApp",
+      callSubject: "Planifier un appel avec Lomon Ventures",
+      whatsappMessage:
+        "Bonjour Loic, j'ai un process métier ou une idée produit à transformer en logiciel. Est-ce qu'on peut en discuter ?",
+      badges: ["Logiciel métier", "Première version utile", "Travail founder-led"],
+      logoIntro: "+ plusieurs produits déjà lancés",
+      logos: ["ListingVid", "EST8", "OhMyLead", "La Côte Vintage", "Perfect Skin", "AI Answer"],
       proof: [
         { value: "6", label: "produits mis en ligne" },
         { value: "15+", label: "ans d'expérience web" },
@@ -395,22 +420,32 @@ export const content = {
       deliverable: "Livrable",
       steps: [
         {
-          title: "Traduire",
+          period: "Semaine 1",
+          title: "Brief & cadrage",
           description:
-            "On transforme votre connaissance client, votre process et vos contraintes en logique produit.",
-          marker: "Workflow clé, utilisateur cible et périmètre de V1.",
+            "On cartographie le workflow métier, l'utilisateur cible et le résultat concret que le produit doit produire.",
+          marker: "Workflow cadré",
         },
         {
-          title: "Couper",
+          period: "Semaine 2",
+          title: "Prototype & validation",
           description:
-            "On retire les idées séduisantes mais non prouvées avant qu'elles ne mangent le budget.",
-          marker: "Scope de première version et plan de build.",
+            "On transforme l'idée en écrans, parcours et plan de build pour que chaque feature ait une vraie raison d'exister.",
+          marker: "Scope validé",
         },
         {
-          title: "Livrer",
+          period: "Semaines 3-4",
+          title: "Build & intégration",
           description:
-            "Je conçois et construis une version utilisable, puis les retours terrain guident la suite.",
-          marker: "Produit en ligne et prochaines priorités.",
+            "Je construis la première version utilisable, connecte les outils essentiels et garde le scope orienté lancement.",
+          marker: "Build en cours",
+        },
+        {
+          period: "Lancement",
+          title: "Livraison & priorités",
+          description:
+            "Vous repartez avec un produit en ligne, une passation claire et une roadmap basée sur les premiers usages.",
+          marker: "Prêt à publier",
         },
       ],
     },
@@ -527,6 +562,7 @@ export const content = {
       legal: "Légal",
       languages: "Langues",
       copyright: "Tous droits réservés.",
+      strip: ["Logiciel métier", "Premier produit", "Founder-led", "Outils internes", "MVP SaaS", "Europe"],
     },
   },
   it: {
@@ -541,20 +577,27 @@ export const content = {
       process: "Processo",
       fit: "Fit",
       contact: "Contatto",
-      cta: "Raccontami l'idea",
+      cta: "Prenota una call",
       light: "Chiaro",
       dark: "Scuro",
       language: "Lingua",
     },
     hero: {
       eyebrow: "Studio software guidato da un founder",
-      title: "Prodotti software per founder che conoscono il mercato, non il codice.",
+      title: "Trasforma il modo in cui lavora il tuo business in software utile.",
       accent: "non il codice.",
       intro:
-        "Tu porti insight cliente, workflow o idea prodotto. Lomon Ventures li trasforma in una prima versione focalizzata da lanciare, testare e migliorare.",
+        "Tu conosci clienti, operazioni, casi particolari e workflow che si rompono. Lomon Ventures trasforma quella conoscenza in un primo prodotto software.",
       support:
-        "Costruito come un indie founder: scope piccolo, lancio veloce, feedback reale. Con la disciplina di 15+ anni sul web.",
-      cta: "Raccontami cosa vuoi costruire",
+        "Obiettivo: chiarire il caso d'uso, costruire la versione utile, lanciarla e imparare da utenti reali senza mesi persi in burocrazia.",
+      cta: "Prenota una call",
+      whatsappCta: "WhatsApp",
+      callSubject: "Prenotare una call con Lomon Ventures",
+      whatsappMessage:
+        "Ciao Loic, ho un workflow business o un'idea prodotto da trasformare in software. Possiamo parlarne?",
+      badges: ["Software business", "Prima versione utile", "Founder-led"],
+      logoIntro: "+ prodotti reali già lanciati",
+      logos: ["ListingVid", "EST8", "OhMyLead", "La Côte Vintage", "Perfect Skin", "AI Answer"],
       proof: [
         { value: "6", label: "prodotti lanciati" },
         { value: "15+", label: "anni in tech" },
@@ -628,22 +671,32 @@ export const content = {
       deliverable: "Deliverable",
       steps: [
         {
-          title: "Tradurre",
+          period: "Settimana 1",
+          title: "Brief & scope",
           description:
-            "Trasformiamo contesto business, processo manuale e insight di mercato in una forma prodotto.",
-          marker: "Workflow principale, utente target e confine prodotto.",
+            "Mappiamo workflow business, utente target e risultato concreto che il prodotto deve generare.",
+          marker: "Workflow mappato",
         },
         {
-          title: "Tagliare",
+          period: "Settimana 2",
+          title: "Prototype & validation",
           description:
-            "Rimuoviamo le parti costose, distraenti e non provate prima che consumino tempo di build.",
-          marker: "Set feature prima versione e piano di build.",
+            "Trasformiamo l'idea in schermate, flussi e piano di build, così ogni feature ha una ragione chiara.",
+          marker: "Scope validato",
         },
         {
-          title: "Lanciare",
+          period: "Settimane 3-4",
+          title: "Build & integrazione",
           description:
-            "Disegno e costruisco la prima versione utilizzabile, poi il feedback decide cosa viene dopo.",
-          marker: "Prodotto lanciato e roadmap prossimi passi.",
+            "Costruisco la prima versione utilizzabile, collego gli strumenti essenziali e mantengo il focus sul lancio.",
+          marker: "Build in corso",
+        },
+        {
+          period: "Lancio",
+          title: "Delivery & priorità",
+          description:
+            "Ottieni un prodotto live, handover chiaro e roadmap dei prossimi passi basata sull'uso reale.",
+          marker: "Pronto a pubblicare",
         },
       ],
     },
@@ -760,6 +813,7 @@ export const content = {
       legal: "Legal",
       languages: "Lingue",
       copyright: "Tutti i diritti riservati.",
+      strip: ["Software business", "Primo prodotto", "Founder-led", "Tool interni", "MVP SaaS", "Europa"],
     },
   },
 } as const;

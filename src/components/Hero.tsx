@@ -4,10 +4,14 @@ import Icon from "./Icon";
 
 interface HeroProps {
   copy: SiteContent["hero"];
+  email: string;
 }
 
-export default function Hero({ copy }: HeroProps) {
-  const titleLead = copy.title.replace(copy.accent, "").trim();
+export default function Hero({ copy, email }: HeroProps) {
+  const hasAccent = copy.title.includes(copy.accent);
+  const titleLead = hasAccent ? copy.title.replace(copy.accent, "").trim() : copy.title;
+  const callHref = `mailto:${email}?subject=${encodeURIComponent(copy.callSubject)}`;
+  const whatsappHref = `https://wa.me/?text=${encodeURIComponent(copy.whatsappMessage)}`;
 
   return (
     <section id="services" className="relative min-h-screen overflow-hidden pt-28 md:pt-36">
@@ -30,7 +34,7 @@ export default function Hero({ copy }: HeroProps) {
           transition={{ delay: 0.05 }}
           className="mx-auto mb-4 max-w-6xl text-4xl font-extrabold leading-[1.08] text-main md:text-6xl lg:text-7xl"
         >
-          {titleLead} <span className="text-accent">{copy.accent}</span>
+          {titleLead} {hasAccent ? <span className="text-accent">{copy.accent}</span> : null}
         </motion.h1>
 
         <motion.p
@@ -54,6 +58,20 @@ export default function Hero({ copy }: HeroProps) {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+          className="hero-badge-row mt-6"
+        >
+          {copy.badges.map((badge) => (
+            <span className="hero-badge" key={badge}>
+              <Icon name="check" className="h-4 w-4" />
+              {badge}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.16 }}
           className="mt-7 flex flex-col items-center justify-center gap-4 text-sm text-muted md:flex-row md:gap-10"
         >
@@ -65,14 +83,42 @@ export default function Hero({ copy }: HeroProps) {
           ))}
         </motion.div>
 
-        <div className="mt-7 w-full max-w-md">
-          <a href="#contact" className="cta-primary group flex items-center justify-between rounded-full p-2 pl-7 text-base font-bold transition-colors">
-            {copy.cta}
-            <span className="cta-dot grid h-12 w-12 place-items-center rounded-full transition-transform group-hover:translate-x-1">
+        <div className="mt-8 flex w-full max-w-2xl flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href={callHref} className="cta-primary hero-cta group inline-flex w-full items-center justify-between rounded-full p-2 pl-6 text-base font-bold transition-colors sm:w-auto sm:min-w-64">
+            <span className="inline-flex items-center gap-2">
+              <Icon name="phone" className="h-5 w-5" />
+              {copy.cta}
+            </span>
+            <span className="cta-dot grid h-11 w-11 place-items-center rounded-full transition-transform group-hover:translate-x-1">
               <Icon name="arrowRight" className="h-5 w-5" />
             </span>
           </a>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-whatsapp grid h-16 w-16 place-items-center rounded-full transition-transform hover:scale-105"
+            aria-label={copy.whatsappCta}
+          >
+            <Icon name="whatsapp" className="h-7 w-7" />
+          </a>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mt-12 w-full max-w-5xl"
+        >
+          <p className="mb-5 text-center text-sm font-bold text-accent-soft">{copy.logoIntro}</p>
+          <div className="logo-carousel" aria-label={copy.logoIntro}>
+            <div className="logo-carousel__track">
+              {[...copy.logos, ...copy.logos].map((logo, index) => (
+                <span className="logo-carousel__item" key={`${logo}-${index}`}>{logo}</span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
