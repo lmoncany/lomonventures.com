@@ -17,8 +17,7 @@ interface SiteChromeProps {
   onThemeToggle: () => void;
 }
 
-const whatsappHref = `https://wa.me/?text=${encodeURIComponent("Hi Loic, I have a product idea or business workflow I would like to discuss.")}`;
-const briefHref = "mailto:hello@lomonventures.com?subject=Tell%20me%20what%20you%20want%20to%20build";
+const whatsappHref = `https://wa.me/?text=${encodeURIComponent("Hi, I have a product idea or business workflow I would like to validate.")}`;
 
 export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onThemeToggle }: SiteChromeProps) {
   const copy = chromeCopy[locale];
@@ -48,7 +47,7 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
           <a className="poc-whatsapp" href={whatsappHref} target="_blank" rel="noreferrer" aria-label={copy.whatsapp}>
             <Icon name="whatsapp" className="h-5 w-5" />
           </a>
-          <a href={briefHref} className="poc-cta poc-cta--compact">
+          <a href={`${localizedPath(locale)}#brief`} className="poc-cta poc-cta--compact">
             <span>{copy.cta}</span>
             <Icon name="arrowRight" className="h-5 w-5" />
           </a>
