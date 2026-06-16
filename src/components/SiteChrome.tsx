@@ -17,7 +17,7 @@ interface SiteChromeProps {
   onThemeToggle: () => void;
 }
 
-const whatsappHref = `https://wa.me/?text=${encodeURIComponent("Hi, I have a product idea or business workflow I would like to validate.")}`;
+const whatsappHref = `https://wa.me/?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
 
 export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onThemeToggle }: SiteChromeProps) {
   const copy = chromeCopy[locale];
@@ -30,9 +30,9 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
           <span>Lomon Ventures</span>
         </a>
         <nav className="poc-nav__links" aria-label="Main navigation">
-          <a href={localizedPath(locale, "/resources")}>{copy.resources}</a>
-          <a href={localizedPath(locale, "/offers")}>{copy.offers}</a>
-          <a href={localizedPath(locale, "/newsletter")}>{copy.newsletter}</a>
+          <a href={`${localizedPath(locale)}#how-it-works`}>{copy.how}</a>
+          <a href={`${localizedPath(locale)}#pricing`}>{copy.pricing}</a>
+          <a href={`${localizedPath(locale)}#portfolio`}>{copy.portfolio}</a>
         </nav>
         <div className="poc-nav__actions">
           <label className="poc-language" aria-label="Language">

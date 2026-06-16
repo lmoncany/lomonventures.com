@@ -364,3 +364,76 @@ button, select { font: inherit; }
   .poc-form-row { grid-template-columns: 1fr; }
   .poc-brief-form { padding: 22px; border-radius: 20px; }
 }
+
+.poc-process__grid--four { grid-template-columns: repeat(4,1fr); }
+.poc-process__grid--four .poc-process__card { min-height: 420px; }
+
+.poc-offers { background: #171513; color: white; }
+.poc-offers .poc-heading-row p { color: #a7a19b; }
+.poc-offer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 58px; }
+.poc-offer-card { position: relative; display: flex; min-height: 610px; flex-direction: column; padding: 30px; border: 1px solid rgba(255,255,255,.13); border-radius: 24px; background: rgba(255,255,255,.055); box-shadow: inset 0 1px rgba(255,255,255,.06); }
+.poc-offer-card--featured { border-color: rgba(255,90,95,.65); background: radial-gradient(circle at top right,rgba(255,90,95,.18),transparent 46%),rgba(255,255,255,.08); box-shadow: 0 34px 100px rgba(255,90,95,.16); }
+.poc-offer-card__tag { position: absolute; top: 18px; right: 18px; margin: 0; padding: 7px 10px; border-radius: 999px; background: var(--accent); color: white; font-size: 10px; font-weight: 900; }
+.poc-offer-card h3 { margin: 50px 0 18px; font-size: 46px; letter-spacing: -.07em; }
+.poc-offer-card__price { margin: 0 0 22px; color: white; font-size: 38px; font-weight: 900; letter-spacing: -.06em; }
+.poc-offer-card__price span { display: block; margin-top: 3px; color: var(--orange); font-size: 12px; letter-spacing: 0; }
+.poc-offer-card > p:not(.poc-offer-card__price):not(.poc-offer-card__tag) { margin: 0 0 24px; color: #b0aaa3; font-size: 14px; line-height: 1.75; }
+.poc-offer-card > div { display: grid; gap: 13px; margin-bottom: 24px; }
+.poc-offer-card > div span { display: flex; gap: 10px; color: #eee9e2; font-size: 13px; line-height: 1.45; }
+.poc-offer-card svg { flex: 0 0 auto; color: var(--orange); }
+.poc-offer-card small { display: block; margin-top: auto; color: #8f8982; font-size: 12px; line-height: 1.65; }
+.poc-offer-card .poc-cta { width: 100%; margin-top: 24px; }
+
+.poc-compare h2 { max-width: 930px; }
+.poc-comparison-table { overflow: hidden; margin-top: 48px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.62); box-shadow: 0 25px 80px rgba(45,36,27,.06); }
+.poc-comparison-table > div { display: grid; grid-template-columns: 1.1fr repeat(5,1fr); border-bottom: 1px solid var(--line); }
+.poc-comparison-table > div:last-child { border-bottom: 0; }
+.poc-comparison-table strong, .poc-comparison-table span { padding: 18px 16px; border-right: 1px solid var(--line); font-size: 13px; }
+.poc-comparison-table strong:last-child, .poc-comparison-table span:last-child { border-right: 0; }
+.poc-comparison-table > div:first-child { background: #171513; color: white; }
+.poc-comparison-table > div:first-child strong { color: white; }
+.poc-comparison-table strong { color: var(--ink); }
+.poc-comparison-table span { color: #625e59; }
+
+.poc-case-section .poc-case-study + .poc-case-study { margin-top: 24px; }
+.poc-case-study__shot { position: relative; min-height: 540px; margin: 0; overflow: hidden; background: #111; }
+.poc-case-study__shot img { width: 100%; height: 100%; min-height: 540px; object-fit: cover; object-position: top center; filter: saturate(.9) contrast(1.02); }
+.poc-case-study--primary .poc-case-study__shot::after { content: "A-Meego"; position: absolute; left: 22px; bottom: 22px; padding: 9px 12px; border-radius: 999px; background: rgba(255,255,255,.9); color: #171513; font-size: 11px; font-weight: 900; }
+.poc-case-study--secondary .poc-case-study__shot::after { content: "Mixologiq"; position: absolute; left: 22px; bottom: 22px; padding: 9px 12px; border-radius: 999px; background: rgba(0,0,0,.72); color: white; font-size: 11px; font-weight: 900; }
+
+.poc-testimonials { background: #f0ede7; }
+.poc-testimonials h2 { max-width: 850px; }
+.poc-testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 52px; }
+.poc-testimonial-grid figure { display: flex; min-height: 350px; flex-direction: column; justify-content: space-between; margin: 0; padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.72); }
+.poc-testimonial-grid blockquote { margin: 0; color: #302c28; font-size: 22px; font-weight: 800; line-height: 1.28; letter-spacing: -.05em; }
+.poc-testimonial-grid figcaption { display: grid; gap: 5px; margin-top: 28px; color: #6b655f; font-size: 12px; line-height: 1.5; }
+.poc-testimonial-grid figcaption strong { color: var(--ink); font-size: 15px; }
+
+.poc-press__lead { max-width: 520px; margin: 28px 0 0; color: #625e59; line-height: 1.8; }
+.poc-press__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+.poc-press__grid a { display: flex; min-height: 112px; align-items: end; justify-content: space-between; gap: 18px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.62); transition: transform .2s ease, border-color .2s ease; }
+.poc-press__grid a:hover { transform: translateY(-2px); border-color: rgba(255,154,68,.45); }
+.poc-press__grid span { max-width: 190px; font-size: 18px; font-weight: 850; letter-spacing: -.045em; }
+.poc-press__grid svg { color: var(--orange); }
+
+[data-theme="dark"] .poc-offers { background: #050709; }
+[data-theme="dark"] .poc-comparison-table, [data-theme="dark"] .poc-testimonial-grid figure, [data-theme="dark"] .poc-press__grid a { background: #10151a; box-shadow: none; }
+[data-theme="dark"] .poc-comparison-table span, [data-theme="dark"] .poc-press__lead { color: #9ca2a7; }
+[data-theme="dark"] .poc-testimonials { background: #0b0f13; }
+[data-theme="dark"] .poc-testimonial-grid blockquote { color: #f4f1ec; }
+[data-theme="dark"] .poc-testimonial-grid figcaption strong { color: white; }
+
+@media (max-width: 900px) {
+  .poc-process__grid--four, .poc-offer-grid, .poc-testimonial-grid { grid-template-columns: 1fr; }
+  .poc-comparison-table { overflow-x: auto; border-radius: 18px; }
+  .poc-comparison-table > div { min-width: 760px; }
+  .poc-case-study__shot, .poc-case-study__shot img { min-height: 420px; }
+  .poc-press__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .poc-offer-card { min-height: auto; padding: 24px; }
+  .poc-offer-card h3 { margin-top: 34px; }
+  .poc-testimonial-grid figure { min-height: auto; }
+  .poc-case-study__shot, .poc-case-study__shot img { min-height: 340px; }
+}

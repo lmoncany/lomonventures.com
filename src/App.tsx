@@ -23,14 +23,14 @@ function App() {
     localStorage.setItem("lomon-theme", theme);
     document.title = route.page
       ? `${route.page === "newsletter" ? "AI Caramba" : route.page[0].toUpperCase() + route.page.slice(1)} | Lomon Ventures`
-      : "Validate your software idea in 30 days | Lomon Ventures";
+      : "Ship your software product in 30 days | Lomon Ventures";
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(
         "content",
         route.page
           ? "Resources, offers, and practical product thinking from Lomon Ventures."
-          : "A €5,000 fixed-price validation sprint: working prototype, real-user feedback, and an evidence-based go/no-go decision in 30 days.",
+          : "Founder-led software studio for business owners with a workflow, idea, spreadsheet, or half-built prototype that needs to become a working product.",
       );
   }, [route.locale, route.page, theme]);
 
