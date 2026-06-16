@@ -19,8 +19,14 @@ interface SiteChromeProps {
 
 const whatsappHref = `https://wa.me/?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
 
+function withHash(path: string, hash: string) {
+  return `${path}${hash}`;
+}
+
 export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onThemeToggle }: SiteChromeProps) {
   const copy = chromeCopy[locale];
+  const homePath = localizedPath(locale);
+  const offersPath = localizedPath(locale, "/offers");
 
   return (
     <header className="poc-nav">
@@ -30,9 +36,22 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
           <span>Lomon Ventures</span>
         </a>
         <nav className="poc-nav__links" aria-label="Main navigation">
-          <a href={`${localizedPath(locale)}#how-it-works`}>{copy.how}</a>
-          <a href={`${localizedPath(locale)}#pricing`}>{copy.pricing}</a>
-          <a href={`${localizedPath(locale)}#portfolio`}>{copy.portfolio}</a>
+          <a href={withHash(homePath, "#how-it-works")}>{copy.how}</a>
+          <div className="poc-nav-menu">
+            <a href={offersPath} className="poc-nav-menu__trigger">
+              {copy.offers}
+              <Icon name="arrowRight" className="h-3 w-3" />
+            </a>
+            <div className="poc-nav-menu__panel">
+              <a href={withHash(homePath, "#ship")}><span>Ship</span><small>€99 boilerplate</small></a>
+              <a href={withHash(homePath, "#launch")}><span>Launch</span><small>€997 landing page</small></a>
+              <a href={withHash(homePath, "#build")}><span>Build</span><small>€5k product sprint</small></a>
+              <a href={withHash(offersPath, "#vibedoctor")}><span>VibeDoctor</span><small>Fix an AI-built product</small></a>
+            </div>
+          </div>
+          <a href={localizedPath(locale, "/resources")}>{copy.resources}</a>
+          <a href={localizedPath(locale, "/newsletter")}>{copy.newsletter}</a>
+          <a href={withHash(homePath, "#portfolio")}>{copy.portfolio}</a>
         </nav>
         <div className="poc-nav__actions">
           <label className="poc-language" aria-label="Language">

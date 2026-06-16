@@ -36,7 +36,7 @@ export default function MarketingPage({ locale, pageKey }: MarketingPageProps) {
       <section className="marketing-sections">
         <div className="poc-shell marketing-sections__grid">
           {page.sections.map(([title, body, href], index) => (
-            <article key={title}>
+            <article id={title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")} key={title}>
               <span>0{index + 1}</span>
               <h2>{title}</h2>
               <p>{body}</p>

@@ -198,7 +198,7 @@ export default function PocHomepage() {
           </div>
           <div className="poc-offer-grid">
             {offers.map(([name, price, rhythm, body, points, note, featured]) => (
-              <article className={`poc-offer-card ${featured ? "poc-offer-card--featured" : ""}`} key={name}>
+              <article id={name.toLowerCase()} className={`poc-offer-card ${featured ? "poc-offer-card--featured" : ""}`} key={name}>
                 {featured ? <p className="poc-offer-card__tag">Most chosen</p> : null}
                 <h3>{name}</h3>
                 <p className="poc-offer-card__price">{price}<span>{rhythm}</span></p>
