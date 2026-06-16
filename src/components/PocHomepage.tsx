@@ -11,6 +11,13 @@ const process = [
   ["Week 4", "Handover", "Full codebase, documentation, and a clear next-step plan based on what the product actually does.", "Codebase + roadmap"],
 ];
 
+const operatingPrinciples = [
+  ["You bring the domain knowledge", "The useful details usually live in your spreadsheet, CRM, sales calls, operations, and customer conversations."],
+  ["Scope protects the budget", "The first version is not a smaller dream. It is the smallest useful version that can remove a real bottleneck."],
+  ["Built like a product, not a task list", "Architecture, onboarding, copy, handover, and next-step decisions are part of the work, not extras."],
+  ["You own what ships", "The codebase, documentation, and roadmap leave with you. No lock-in, no vague dependency."],
+];
+
 const offers = [
   ["Ship", "€99", "one-time", "The exact foundation used to build the Lomon portfolio, ready to clone and go.", ["Production-ready boilerplate", "Auth, database, and AI layer", "Vercel deployment ready", "Async Q&A within 24h", "Lifetime updates"], "For founders who can build and need the right foundation."],
   ["Launch", "€997", "one-time", "A landing page that converts, designed, built, and live in 7 days.", ["Copy, design, and development", "Built on your stack or mine", "Mobile, fast, deployed", "One revision round included"], "For founders who need leads before the product is ready."],
@@ -170,9 +177,27 @@ export default function PocHomepage() {
         </div>
       </section>
 
+      <section className="poc-section poc-operating">
+        <div className="poc-shell">
+          <SectionLabel>02 / Why this works</SectionLabel>
+          <div className="poc-heading-row">
+            <h2>Not a dev shop. <span>A build system for business owners.</span></h2>
+            <p>You know the market. The studio turns that knowledge into the first useful version of the product.</p>
+          </div>
+          <div className="poc-operating__grid">
+            {operatingPrinciples.map(([title, body]) => (
+              <article key={title}>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="how-it-works" className="poc-section poc-process">
         <div className="poc-shell">
-          <SectionLabel>02 / How it works</SectionLabel>
+          <SectionLabel>03 / How it works</SectionLabel>
           <div className="poc-heading-row">
             <h2>From workflow to working product <span>in four steps.</span></h2>
             <p>The work starts with scope because bad scope is where most software projects become expensive.</p>
@@ -191,9 +216,9 @@ export default function PocHomepage() {
 
       <section id="pricing" className="poc-section poc-offers">
         <div className="poc-shell">
-          <SectionLabel>03 / Offers</SectionLabel>
+          <SectionLabel>04 / Offers</SectionLabel>
           <div className="poc-heading-row">
-            <h2>Two ways in. <span>One outcome.</span></h2>
+            <h2>Three ways in. <span>One outcome.</span></h2>
             <p>Start yourself, launch the demand capture layer, or get the product built end to end.</p>
           </div>
           <div className="poc-offer-grid">
@@ -214,7 +239,7 @@ export default function PocHomepage() {
 
       <section className="poc-section poc-compare">
         <div className="poc-shell">
-          <SectionLabel>04 / Honest comparison</SectionLabel>
+          <SectionLabel>05 / Honest comparison</SectionLabel>
           <h2>You have options. <span>Not all roads lead to a working product.</span></h2>
           <div className="poc-comparison-table" role="table" aria-label="Offer comparison">
             <div role="row"><strong></strong><strong>Ship</strong><strong>Launch</strong><strong>Build</strong><strong>Freelancer</strong><strong>Agency</strong></div>
@@ -225,7 +250,7 @@ export default function PocHomepage() {
 
       <section id="portfolio" className="poc-section poc-case-section">
         <div className="poc-shell">
-          <SectionLabel>05 / Portfolio proof</SectionLabel>
+          <SectionLabel>06 / Portfolio proof</SectionLabel>
           <article className="poc-case-study poc-case-study--primary">
             <div>
               <p className="poc-case-study__eyebrow">A-Meego · Bangkok real estate</p>
@@ -249,7 +274,7 @@ export default function PocHomepage() {
 
       <section className="poc-section poc-fit">
         <div className="poc-shell">
-          <SectionLabel>06 / Fit</SectionLabel>
+          <SectionLabel>07 / Fit</SectionLabel>
           <h2>This is for you if <span>the problem is already real.</span></h2>
           <div className="poc-fit__grid">
             <div className="poc-fit__yes">{fit.map((item) => <div key={item}><Icon name="check" className="h-5 w-5" /><p>{item}</p></div>)}</div>
@@ -260,7 +285,7 @@ export default function PocHomepage() {
 
       <section className="poc-section poc-testimonials">
         <div className="poc-shell">
-          <SectionLabel>07 / What clients say</SectionLabel>
+          <SectionLabel>08 / What clients say</SectionLabel>
           <h2>Proof that the work <span>actually ships.</span></h2>
           <div className="poc-testimonial-grid">
             {testimonials.map(([quote, name, role]) => <figure key={name}><blockquote>“{quote}”</blockquote><figcaption><strong>{name}</strong><span>{role}</span></figcaption></figure>)}
@@ -271,7 +296,7 @@ export default function PocHomepage() {
       <section className="poc-section poc-press">
         <div className="poc-shell poc-split">
           <div>
-            <SectionLabel>08 / Press and community</SectionLabel>
+            <SectionLabel>09 / Press and community</SectionLabel>
             <h2>Not just code. <span>Operating context.</span></h2>
             <p className="poc-press__lead">Before Lomon Ventures, the work included Flowr Agency, French Touch Malta, and community building in Malta's digital nomad ecosystem. That matters because business software is never only technical.</p>
           </div>
@@ -283,7 +308,7 @@ export default function PocHomepage() {
 
       <section className="poc-section poc-faq">
         <div className="poc-shell poc-split">
-          <div><SectionLabel>09 / Common questions</SectionLabel><h2>Clear scope.<br /><span>Clear expectations.</span></h2></div>
+          <div><SectionLabel>10 / Common questions</SectionLabel><h2>Clear scope.<br /><span>Clear expectations.</span></h2></div>
           <div className="poc-faq__list">
             {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}
           </div>

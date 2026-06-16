@@ -467,3 +467,20 @@ button, select { font: inherit; }
   .poc-testimonial-grid figure { min-height: auto; }
   .poc-case-study__shot, .poc-case-study__shot img { min-height: 340px; }
 }
+
+.poc-operating { background: #f0ede7; }
+.poc-operating__grid { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 58px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.poc-operating__grid article { min-height: 310px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.52); }
+.poc-operating__grid h3 { margin: 122px 0 14px; font-size: 27px; line-height: 1; letter-spacing: -.06em; }
+.poc-operating__grid p { margin: 0; color: #625e59; font-size: 13px; line-height: 1.75; }
+[data-theme="dark"] .poc-operating { background: #0b0f13; }
+[data-theme="dark"] .poc-operating__grid article { background: #10151a; }
+[data-theme="dark"] .poc-operating__grid p { color: #9ca2a7; }
+@media (max-width: 900px) {
+  .poc-operating__grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 560px) {
+  .poc-operating__grid { grid-template-columns: 1fr; }
+  .poc-operating__grid article { min-height: 230px; }
+  .poc-operating__grid h3 { margin-top: 78px; }
+}
