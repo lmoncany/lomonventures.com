@@ -54,7 +54,14 @@ const testimonials = [
   ["Très à l'écoute, produisant un travail de qualité, soigné et dans les délais impartis à chaque mission.", "Manuel Rohaut", "Client recommendation"],
 ];
 
-const seenOn = ["TVM Malta", "France TV", "M6", "French Touch Malta", "CoCoHub Malta", "Flowr Agency"];
+const seenOn = [
+  { name: "TVM Malta", src: "/logos/tvm.webp" },
+  { name: "France.tv", src: "/logos/france-tv.svg" },
+  { name: "M6", src: "/logos/m6.svg" },
+  { name: "French Touch Malta", src: "/logos/french-touch-malta.png" },
+  { name: "CoCoHub", src: "/logos/cocohub.png" },
+  { name: "Flowr Agency", src: "/logos/flowr-agency.png" },
+];
 
 const pressMentions = [
   ["Digital nomad economy", "https://www.youtube.com/watch?v=aUAI-MXfwLM"],
@@ -171,7 +178,11 @@ export default function PocHomepage() {
         <div className="poc-shell">
           <p>As seen on</p>
           <div className="poc-seen-on__logos">
-            {seenOn.map((item) => <span key={item}>{item}</span>)}
+            {seenOn.map((item) => (
+              <span key={item.name}>
+                <img src={item.src} alt={item.name} loading="lazy" />
+              </span>
+            ))}
           </div>
         </div>
       </section>
