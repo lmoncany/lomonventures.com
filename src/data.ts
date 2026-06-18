@@ -6,7 +6,7 @@ export const profile: Profile = {
   description: "Software products for founders who know the market, not the code",
   about:
     "Lomon Ventures is led by Loic Moncany, a founder-developer with 15+ years in web development and 6 years running a digital agency in Malta.",
-  email: "hello@lomonventures.com",
+  email: "lomonventures@gmail.com",
   image: "https://github.com/lmoncany.png?size=1200",
 };
 

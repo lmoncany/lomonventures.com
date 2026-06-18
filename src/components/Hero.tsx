@@ -11,7 +11,7 @@ export default function Hero({ copy, email }: HeroProps) {
   const hasAccent = copy.title.includes(copy.accent);
   const titleLead = hasAccent ? copy.title.replace(copy.accent, "").trim() : copy.title;
   const callHref = `mailto:${email}?subject=${encodeURIComponent(copy.callSubject)}`;
-  const whatsappHref = `https://wa.me/?text=${encodeURIComponent(copy.whatsappMessage)}`;
+  const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent(copy.whatsappMessage)}`;
 
   return (
     <section id="services" className="relative min-h-screen overflow-hidden pt-28 md:pt-36">

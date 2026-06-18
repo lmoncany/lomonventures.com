@@ -254,7 +254,7 @@ export const content = {
           {
             title: "Your choices",
             body:
-              "You can ask for your contact information to be corrected or deleted by emailing hello@lomonventures.com.",
+              "You can ask for your contact information to be corrected or deleted by emailing lomonventures@gmail.com.",
           },
         ],
       },
@@ -300,7 +300,7 @@ export const content = {
           {
             title: "Contact",
             body:
-              "Questions about cookies or privacy can be sent to hello@lomonventures.com.",
+              "Questions about cookies or privacy can be sent to lomonventures@gmail.com.",
           },
         ],
       },
@@ -505,7 +505,7 @@ export const content = {
           {
             title: "Vos choix",
             body:
-              "Vous pouvez demander la correction ou suppression de vos informations en écrivant à hello@lomonventures.com.",
+              "Vous pouvez demander la correction ou suppression de vos informations en écrivant à lomonventures@gmail.com.",
           },
         ],
       },
@@ -551,7 +551,7 @@ export const content = {
           {
             title: "Contact",
             body:
-              "Les questions privacy ou cookies peuvent être envoyées à hello@lomonventures.com.",
+              "Les questions privacy ou cookies peuvent être envoyées à lomonventures@gmail.com.",
           },
         ],
       },
@@ -756,7 +756,7 @@ export const content = {
           {
             title: "Le tue scelte",
             body:
-              "Puoi chiedere correzione o cancellazione dei dati di contatto scrivendo a hello@lomonventures.com.",
+              "Puoi chiedere correzione o cancellazione dei dati di contatto scrivendo a lomonventures@gmail.com.",
           },
         ],
       },
@@ -802,7 +802,7 @@ export const content = {
           {
             title: "Contatto",
             body:
-              "Domande su cookie o privacy possono essere inviate a hello@lomonventures.com.",
+              "Domande su cookie o privacy possono essere inviate a lomonventures@gmail.com.",
           },
         ],
       },

@@ -17,7 +17,24 @@ interface SiteChromeProps {
   onThemeToggle: () => void;
 }
 
-const whatsappHref = `https://wa.me/?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
+const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
+const offerNavItems: Record<SiteLocale, [string, string, string][]> = {
+  en: [
+    ["MVP in 30 days", "#mvp-in-30-days", "Scope, build, handover"],
+    ["Vibedoctor", "#vibedoctor", "We fix your AI website/app"],
+    ["RoastMySaas", "#roastmysaas", "Positioning and conversion audit"],
+  ],
+  fr: [
+    ["MVP en 30 jours", "#mvp-en-30-jours", "Cadrage, build, transmission"],
+    ["Vibedoctor", "#vibedoctor", "Votre site/app IA corrigé"],
+    ["RoastMySaas", "#roastmysaas", "Audit positionnement et conversion"],
+  ],
+  it: [
+    ["MVP in 30 giorni", "#mvp-in-30-giorni", "Scope, build, consegna"],
+    ["Vibedoctor", "#vibedoctor", "Fix per siti/app AI"],
+    ["RoastMySaas", "#roastmysaas", "Audit posizionamento e conversione"],
+  ],
+};
 
 function withHash(path: string, hash: string) {
   return `${path}${hash}`;
@@ -43,15 +60,13 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
               <Icon name="arrowRight" className="h-3 w-3" />
             </a>
             <div className="poc-nav-menu__panel">
-              <a href={withHash(homePath, "#ship")}><span>Ship</span><small>€99 boilerplate</small></a>
-              <a href={withHash(homePath, "#launch")}><span>Launch</span><small>€997 landing page</small></a>
-              <a href={withHash(homePath, "#build")}><span>Build</span><small>€5k product sprint</small></a>
-              <a href={withHash(offersPath, "#vibedoctor")}><span>VibeDoctor</span><small>Fix an AI-built product</small></a>
+              {offerNavItems[locale].map(([label, hash, description]) => (
+                <a href={withHash(offersPath, hash)} key={label}><span>{label}</span><small>{description}</small></a>
+              ))}
             </div>
           </div>
           <a href={localizedPath(locale, "/resources")}>{copy.resources}</a>
           <a href={localizedPath(locale, "/newsletter")}>{copy.newsletter}</a>
-          <a href={withHash(homePath, "#portfolio")}>{copy.portfolio}</a>
         </nav>
         <div className="poc-nav__actions">
           <label className="poc-language" aria-label="Language">

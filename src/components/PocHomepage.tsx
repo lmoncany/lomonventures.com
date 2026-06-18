@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import Icon from "./Icon";
 
 const ctaLabel = "Tell me what you want to build";
+const contactEmail = "lomonventures@gmail.com";
+const phoneDisplay = "+33 6 58 92 87 52";
+const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
 
 const process = [
   ["Week 1", "Scope", "Define the hypothesis, kill the wrong features, and agree what success looks like before touching code.", "One-page brief"],
@@ -50,6 +53,8 @@ const testimonials = [
   ["Loic is a secret weapon in web dev. It was complete in 2 days, polished with animations, and built with clean code.", "Teri Yu", "Product @ OpenAI · Founder, exited to Kajabi"],
   ["Très à l'écoute, produisant un travail de qualité, soigné et dans les délais impartis à chaque mission.", "Manuel Rohaut", "Client recommendation"],
 ];
+
+const seenOn = ["TVM Malta", "France TV", "M6", "French Touch Malta", "CoCoHub Malta", "Flowr Agency"];
 
 const pressMentions = [
   ["Digital nomad economy", "https://www.youtube.com/watch?v=aUAI-MXfwLM"],
@@ -100,7 +105,7 @@ function BriefForm() {
       `What would make the next 30 days successful?\n${form.get("outcome")}`,
     ].join("\n");
 
-    window.location.href = `mailto:hello@lomonventures.com?subject=${encodeURIComponent("Product build brief")}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent("Product build brief")}&body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -159,6 +164,15 @@ export default function PocHomepage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="poc-seen-on" aria-label="As seen on">
+        <div className="poc-shell">
+          <p>As seen on</p>
+          <div className="poc-seen-on__logos">
+            {seenOn.map((item) => <span key={item}>{item}</span>)}
+          </div>
         </div>
       </section>
 
@@ -243,7 +257,7 @@ export default function PocHomepage() {
           <h2>You have options. <span>Not all roads lead to a working product.</span></h2>
           <div className="poc-comparison-table" role="table" aria-label="Offer comparison">
             <div role="row"><strong></strong><strong>Ship</strong><strong>Launch</strong><strong>Build</strong><strong>Freelancer</strong><strong>Agency</strong></div>
-            {comparison.map((row) => <div role="row" key={row[0]}>{row.map((cell, index) => index === 0 ? <strong key={cell}>{cell}</strong> : <span key={cell}>{cell}</span>)}</div>)}
+            {comparison.map((row) => <div role="row" key={row[0]}>{row.map((cell, index) => index === 0 ? <strong key={`${row[0]}-${index}`}>{cell}</strong> : <span key={`${row[0]}-${index}`}>{cell}</span>)}</div>)}
           </div>
         </div>
       </section>
@@ -285,8 +299,8 @@ export default function PocHomepage() {
 
       <section className="poc-section poc-testimonials">
         <div className="poc-shell">
-          <SectionLabel>08 / What clients say</SectionLabel>
-          <h2>Proof that the work <span>actually ships.</span></h2>
+          <SectionLabel>08 / What people are saying</SectionLabel>
+          <h2>Proof from people who <span>actually shipped.</span></h2>
           <div className="poc-testimonial-grid">
             {testimonials.map(([quote, name, role]) => <figure key={name}><blockquote>“{quote}”</blockquote><figcaption><strong>{name}</strong><span>{role}</span></figcaption></figure>)}
           </div>
@@ -321,7 +335,10 @@ export default function PocHomepage() {
             <SectionLabel>Start here</SectionLabel>
             <h2>You keep running the business. <span>The tool stops being the bottleneck.</span></h2>
             <p>Fill in a short brief about your idea, workflow, or half-built product. You will receive an honest assessment within 48 hours before any commitment.</p>
-            <a href="mailto:hello@lomonventures.com">hello@lomonventures.com</a>
+            <div className="poc-contact-strip">
+              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              <a href={whatsappHref} target="_blank" rel="noreferrer">WhatsApp {phoneDisplay}</a>
+            </div>
           </div>
           <BriefForm />
         </div>
