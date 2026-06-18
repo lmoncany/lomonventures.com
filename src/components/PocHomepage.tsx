@@ -72,6 +72,35 @@ const pressMentions = [
   ["Entrepreneurship in Malta", "https://www.youtube.com/watch?v=rF_vLRAPfss"],
 ];
 
+const featuredVideos = [
+  {
+    title: "Luc Thilliez talks about working with Flowr Agency",
+    meta: "Video testimonial · Flowr Agency",
+    youtubeId: "1DJwVajzCbo",
+  },
+  {
+    title: "Digital nomads with Daniel Goebel and Loïc Moncany",
+    meta: "Interview · AIBC World",
+    youtubeId: "rF_vLRAPfss",
+  },
+];
+
+const moreVideos = [
+  ["Amin Lams testimonial", "Flowr Agency", "https://www.youtube.com/watch?v=_x4FIFXLMwE"],
+  ["TVM Malta interview", "Nomad visa in Malta", "https://www.youtube.com/watch?v=aUAI-MXfwLM"],
+  ["Malte, le nouvel eldorado des nomades digitaux", "Travail / interview", "https://www.youtube.com/watch?v=EgFaogkqjZE"],
+  ["The Swiss Army knife of Malta", "What A Job", "https://www.youtube.com/watch?v=PXLZGw0Z1-s"],
+  ["From employee to agency owner in Malta", "Marc Boulet Business", "https://www.youtube.com/watch?v=YJ-v5beLHig"],
+  ["A talk with a friend abroad", "Far From Home", "https://www.youtube.com/watch?v=NpXw1Z_Ra_g"],
+];
+
+const socialLinks = [
+  ["YouTube", "https://www.youtube.com/@lmoncany"],
+  ["LinkedIn", "https://www.linkedin.com/in/lmoncany/"],
+  ["X", "https://x.com/lmoncany"],
+  ["GitHub", "https://github.com/lmoncany"],
+];
+
 const faqs = [
   ["Is this an MVP or a finished product?", "It is a working first version built around the workflow that matters. It is not a bloated final product with every future feature included."],
   ["What if I already started with AI or no-code?", "Bring the Claude conversation, prototype, spreadsheet, or no-code setup. The first job is to decide what is useful, what is fragile, and what needs rebuilding."],
@@ -318,10 +347,52 @@ export default function PocHomepage() {
         </div>
       </section>
 
+      <section className="poc-section poc-video-proof">
+        <div className="poc-shell">
+          <SectionLabel>09 / Video proof</SectionLabel>
+          <div className="poc-heading-row">
+            <h2>Testimonials and interviews <span>you can actually watch.</span></h2>
+            <p>Client videos, podcast interviews, and media appearances around agency work, digital nomads, and building in Malta.</p>
+          </div>
+          <div className="poc-video-proof__featured">
+            {featuredVideos.map((video) => (
+              <article key={video.youtubeId}>
+                <div className="poc-video-frame">
+                  <iframe
+                    title={video.title}
+                    src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <p>{video.meta}</p>
+                <h3>{video.title}</h3>
+              </article>
+            ))}
+          </div>
+          <div className="poc-video-proof__more">
+            {moreVideos.map(([title, meta, href]) => (
+              <a href={href} target="_blank" rel="noreferrer" key={href}>
+                <span>{meta}</span>
+                <strong>{title}</strong>
+                <Icon name="external" className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+          <div className="poc-social-strip" aria-label="Social links">
+            <p>More signal:</p>
+            {socialLinks.map(([label, href]) => (
+              <a href={href} target="_blank" rel="noreferrer" key={href}>{label}<Icon name="external" className="h-3 w-3" /></a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="poc-section poc-press">
         <div className="poc-shell poc-split">
           <div>
-            <SectionLabel>09 / Press and community</SectionLabel>
+            <SectionLabel>10 / Press and community</SectionLabel>
             <h2>Not just code. <span>Operating context.</span></h2>
             <p className="poc-press__lead">Before Lomon Ventures, the work included Flowr Agency, French Touch Malta, and community building in Malta's digital nomad ecosystem. That matters because business software is never only technical.</p>
           </div>
@@ -333,7 +404,7 @@ export default function PocHomepage() {
 
       <section className="poc-section poc-faq">
         <div className="poc-shell poc-split">
-          <div><SectionLabel>10 / Common questions</SectionLabel><h2>Clear scope.<br /><span>Clear expectations.</span></h2></div>
+          <div><SectionLabel>11 / Common questions</SectionLabel><h2>Clear scope.<br /><span>Clear expectations.</span></h2></div>
           <div className="poc-faq__list">
             {faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}
           </div>

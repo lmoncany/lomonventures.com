@@ -35,6 +35,12 @@ const offerNavItems: Record<SiteLocale, [string, string, string][]> = {
     ["RoastMySaas", "#roastmysaas", "Audit posizionamento e conversione"],
   ],
 };
+const footerSocialLinks = [
+  ["YouTube", "https://www.youtube.com/@lmoncany"],
+  ["LinkedIn", "https://www.linkedin.com/in/lmoncany/"],
+  ["X", "https://x.com/lmoncany"],
+  ["GitHub", "https://github.com/lmoncany"],
+];
 
 function withHash(path: string, hash: string) {
   return `${path}${hash}`;
@@ -104,6 +110,11 @@ export function SiteFooter({ locale }: Pick<SiteChromeProps, "locale">) {
           <a href={localizedPath(locale, "/newsletter")}>{copy.newsletter}</a>
           <a href={localizedPath(locale, "/about")}>{copy.about}</a>
         </nav>
+        <div className="poc-footer__social" aria-label="Social links">
+          {footerSocialLinks.map(([label, href]) => (
+            <a href={href} target="_blank" rel="noreferrer" key={href}>{label}</a>
+          ))}
+        </div>
         <p>© 2026</p>
       </div>
     </footer>
