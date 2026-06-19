@@ -49,7 +49,7 @@ function App() {
         onLocaleChange={changeLocale}
         onThemeToggle={() => setTheme((current) => current === "light" ? "dark" : "light")}
       />
-      {route.page ? <MarketingPage locale={route.locale} pageKey={route.page} /> : <PocHomepage />}
+      {route.page ? <MarketingPage locale={route.locale} pageKey={route.page} /> : <PocHomepage locale={route.locale} />}
       <SiteFooter locale={route.locale} />
     </div>
   );
