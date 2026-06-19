@@ -179,13 +179,12 @@ export default function PocHomepage() {
     <main>
       <section className="poc-hero">
         <div className="poc-hero__grid" />
-        <div className="poc-orb poc-orb--one" />
-        <div className="poc-orb poc-orb--two" />
+        <span className="poc-hero__bleed" aria-hidden="true">30</span>
         <div className="poc-shell poc-hero__inner">
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="poc-offer-chip"><span className="poc-offer-chip__dot" />Founder-led software studio</div>
-            <h1>You've been trying to build this for months.<br /><span>It's time to actually ship it.</span></h1>
-            <p className="poc-hero__sub">Bring the idea, spreadsheet, half-built prototype, or Claude conversation that got you 60% there. The missing scope gets fixed, the product gets built, and a working version ships in 30 days for €5,000.</p>
+            <h1>You've been trying<br />to build this<br /><span>for months.</span></h1>
+            <p className="poc-hero__sub">Bring the idea, spreadsheet, half-built prototype, or Claude conversation that got you 60% there. The scope gets fixed, the product gets built, and a working version ships in <strong>30 days for €5,000</strong>.</p>
             <div className="poc-hero__proof">
               {["6 products shipped", "15+ years building for the web", "Direct work, no account managers"].map((item) => <span key={item}><Icon name="check" className="h-4 w-4" />{item}</span>)}
             </div>
@@ -194,7 +193,7 @@ export default function PocHomepage() {
               <p>Fill in a short brief. You'll receive an honest reply within 48 hours.</p>
             </div>
             <div className="poc-hero__trust">
-              <p>Real products, real operators, real markets.</p>
+              <p>Real products. Real operators. Real markets.</p>
               <div className="poc-hero__logos">
                 {["Real estate", "Hospitality tech", "Automotive", "Lead generation", "AI workflows", "Internal tools"].map((item) => <span key={item}>{item}</span>)}
               </div>
