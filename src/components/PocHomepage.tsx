@@ -2,7 +2,7 @@ import { type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Icon from "./Icon";
 
-const ctaLabel = "Tell me what you want to build";
+const ctaLabel = "Start a project";
 const contactEmail = "lomonventures@gmail.com";
 const phoneDisplay = "+33 6 58 92 87 52";
 const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;

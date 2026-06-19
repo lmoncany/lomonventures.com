@@ -30,10 +30,10 @@
   --radius:               0.5rem;
 
   /* site tokens */
-  --bg:        #FAFAF8;
-  --bg-subtle: #F3F1EC;
+  --bg:        #FFFFFF;
+  --bg-subtle: #F5F5F5;
   --surface:   #FFFFFF;
-  --surface-2: #F8F7F4;
+  --surface-2: #F9F9F9;
   --border-c:  rgba(0,0,0,0.07);
   --border-med:rgba(0,0,0,0.12);
   --ink:       #111010;
@@ -213,12 +213,12 @@ button,select { font:inherit; }
 }
 .poc-icon-action:hover { background:var(--bg-subtle); color:var(--ink); }
 .poc-whatsapp {
-  border-radius:50%;
-  border:1px solid rgba(30,203,112,.25);
-  background:#1ecb70; color:white;
-  box-shadow:0 2px 12px rgba(30,203,112,.2);
+  width:38px; height:38px; border-radius:50%;
+  border:none;
+  background:#25D366; color:white;
+  box-shadow:0 2px 8px rgba(37,211,102,.35), 0 0 0 3px rgba(37,211,102,.12);
 }
-.poc-whatsapp:hover { opacity:.9; }
+.poc-whatsapp:hover { background:#20bf5c; box-shadow:0 4px 14px rgba(37,211,102,.45), 0 0 0 4px rgba(37,211,102,.15); }
 
 /* ─────────────────────────────────────────────────────────────────
    PRIMARY CTA — uses shadcn button style underneath
@@ -344,13 +344,15 @@ button,select { font:inherit; }
 /* ─────────────────────────────────────────────────────────────────
    SEEN-ON
 ───────────────────────────────────────────────────────────────── */
-.poc-seen-on { padding:28px 0; border-bottom:1px solid var(--border-c); }
-.poc-seen-on .poc-shell { display:grid; grid-template-columns:120px 1fr; gap:24px; align-items:center; }
-.poc-seen-on p { margin:0; color:var(--faint); font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; }
-.poc-seen-on__logos { display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:var(--border-c); border:1px solid var(--border-c); border-radius:10px; overflow:hidden; }
-.poc-seen-on__logos span { display:grid; min-height:60px; place-items:center; padding:12px; background:var(--surface); }
-.poc-seen-on__logos img { display:block; width:min(100px,100%); max-height:26px; object-fit:contain; filter:grayscale(1) opacity(.35); transition:filter .2s,transform .2s; }
-.poc-seen-on__logos span:hover img { filter:grayscale(0) opacity(1); transform:translateY(-1px); }
+.poc-seen-on { padding:40px 0; border-bottom:1px solid var(--border-c); }
+.poc-seen-on .poc-shell { display:flex; flex-direction:column; gap:20px; }
+.poc-seen-on p { margin:0; color:var(--muted); font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; text-align:center; }
+.poc-seen-on__logos { display:grid; grid-template-columns:repeat(6,1fr); gap:0; border:1px solid var(--border-c); border-radius:14px; overflow:hidden; }
+.poc-seen-on__logos span { display:grid; min-height:80px; place-items:center; padding:16px; background:var(--surface); border-right:1px solid var(--border-c); transition:background .18s,transform .18s; }
+.poc-seen-on__logos span:last-child { border-right:0; }
+.poc-seen-on__logos span:hover { background:var(--bg-subtle); }
+.poc-seen-on__logos img { display:block; width:min(110px,100%); max-height:32px; object-fit:contain; opacity:1; transition:transform .2s; }
+.poc-seen-on__logos span:hover img { transform:translateY(-2px); }
 
 /* ─────────────────────────────────────────────────────────────────
    SECTION HEADINGS

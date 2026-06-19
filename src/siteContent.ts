@@ -25,7 +25,7 @@ export const chromeCopy = {
     how: "How it works",
     pricing: "Pricing",
     portfolio: "Portfolio",
-    cta: "Tell me what you want to build",
+    cta: "Start a project",
     whatsapp: "Start a WhatsApp conversation",
     theme: "Switch color theme",
     closing: "Useful software starts with a useful question.",
