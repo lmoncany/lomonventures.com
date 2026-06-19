@@ -168,6 +168,22 @@ button,select { font:inherit; }
 }
 .poc-nav__links a:hover { background:var(--bg-subtle); color:var(--ink); }
 
+.poc-nav__tribe {
+  display:inline-flex; align-items:center; gap:7px;
+  margin-left:4px; padding:5px 12px 5px 10px;
+  border:1px solid rgba(240,90,0,.25); border-radius:999px;
+  background:rgba(240,90,0,.06); color:var(--orange) !important;
+  font-weight:600; white-space:nowrap;
+  transition:background .15s, border-color .15s, transform .15s !important;
+}
+.poc-nav__tribe:hover { background:rgba(240,90,0,.1) !important; border-color:rgba(240,90,0,.45); transform:translateY(-1px); }
+.poc-nav__tribe-dot {
+  width:6px; height:6px; border-radius:50%; flex:0 0 auto;
+  background:var(--orange);
+  box-shadow:0 0 0 3px rgba(240,90,0,.2);
+  animation:pulseDot 2.2s ease infinite;
+}
+
 .poc-nav-menu        { position:relative; display:flex; align-items:center; min-height:64px; }
 .poc-nav-menu__trigger { display:inline-flex; align-items:center; gap:4px; padding:6px 12px; border-radius:6px; }
 .poc-nav-menu__trigger:hover { background:var(--bg-subtle); color:var(--ink); }

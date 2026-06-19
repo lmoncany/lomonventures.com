@@ -73,6 +73,10 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
           </div>
           <a href={localizedPath(locale, "/resources")}>{copy.resources}</a>
           <a href={localizedPath(locale, "/newsletter")}>{copy.newsletter}</a>
+          <a href="https://aitribe.io" target="_blank" rel="noreferrer" className="poc-nav__tribe">
+            <span className="poc-nav__tribe-dot" />
+            {copy.tribe}
+          </a>
         </nav>
         <div className="poc-nav__actions">
           <label className="poc-language" aria-label="Language">
