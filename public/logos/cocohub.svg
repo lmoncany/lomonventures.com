@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120">
-  <rect width="300" height="120" fill="#CC0000" rx="6"/>
-  <text x="150" y="82" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="58" fill="white" text-anchor="middle" letter-spacing="2">COCOHUB</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 190">
+  <path d="M100 168 C70 148 14 110 14 62 C14 34 34 11 61 11 C77 11 92 19 100 32 C108 19 123 11 139 11 C166 11 186 34 186 62 C186 110 130 148 100 168 Z" fill="#C0161C"/>
+  <text x="100" y="93" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="24" fill="white" text-anchor="middle" letter-spacing="0.5">COCOHUB</text>
 </svg>
