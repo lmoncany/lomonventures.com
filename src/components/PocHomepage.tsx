@@ -49,9 +49,12 @@ const notFit = [
 ];
 
 const testimonials = [
-  ["Loic a cree mon CRM et mon site internet. Excellente collaboration. Les produits que Loic a développé pour nous fonctionne parfaitement.", "Thierry Martino", "Designer / Owner at SoulFetish · A-Meego client"],
-  ["Loic is a secret weapon in web dev. It was complete in 2 days, polished with animations, and built with clean code.", "Teri Yu", "Product @ OpenAI · Founder, exited to Kajabi"],
-  ["Très à l'écoute, produisant un travail de qualité, soigné et dans les délais impartis à chaque mission.", "Manuel Rohaut", "Client recommendation"],
+  { quote: "Loic a cree mon CRM et mon site internet. Excellente collaboration. Les produits que Loic a développé pour nous fonctionne parfaitement.", name: "Thierry Martino", role: "Designer / Owner at SoulFetish · A-Meego client", youtubeId: null },
+  { quote: "Loic is a secret weapon in web dev. It was complete in 2 days, polished with animations, and built with clean code.", name: "Teri Yu", role: "Product @ OpenAI · Founder, exited to Kajabi", youtubeId: null },
+  { quote: "Très à l'écoute, produisant un travail de qualité, soigné et dans les délais impartis à chaque mission.", name: "Manuel Rohaut", role: "Client recommendation", youtubeId: null },
+  { quote: "Luc Thilliez talks about his experience working with Flowr Agency.", name: "Luc Thilliez", role: "Client · Flowr Agency", youtubeId: "1DJwVajzCbo" },
+  { quote: "Amin Lams shares his experience working with the agency.", name: "Amin Lams", role: "Client · Flowr Agency", youtubeId: "_x4FIFXLMwE" },
+  { quote: "Digital nomads and entrepreneurship in Malta — interview with Daniel Goebel.", name: "Daniel Goebel", role: "Interview · AIBC World", youtubeId: "rF_vLRAPfss" },
 ];
 
 const seenOn = [
@@ -95,10 +98,10 @@ const moreVideos = [
 ];
 
 const socialLinks = [
-  ["YouTube", "https://www.youtube.com/@lmoncany"],
-  ["LinkedIn", "https://www.linkedin.com/in/lmoncany/"],
-  ["X", "https://x.com/lmoncany"],
-  ["GitHub", "https://github.com/lmoncany"],
+  ["YouTube", "https://www.youtube.com/@lmoncany", "yt"],
+  ["LinkedIn", "https://www.linkedin.com/in/lmoncany/", "li"],
+  ["X", "https://x.com/lmoncany", "x"],
+  ["GitHub", "https://github.com/lmoncany", "gh"],
 ];
 
 const faqs = [
@@ -192,6 +195,18 @@ export default function PocHomepage() {
               <Cta />
               <p>Fill in a short brief. You'll receive an honest reply within 48 hours.</p>
             </div>
+            <div className="poc-hero__seen-marquee" aria-label="As seen on">
+              <p>As seen on</p>
+              <div className="poc-marquee">
+                <div className="poc-marquee__track">
+                  {[...seenOn, ...seenOn, ...seenOn].map((item, i) => (
+                    <span className="poc-marquee__item" key={`${item.name}-${i}`}>
+                      <img src={item.src} alt={item.name} loading="lazy" />
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
             <div className="poc-hero__trust">
               <p>Real products. Real operators. Real markets.</p>
               <div className="poc-hero__logos">
@@ -202,15 +217,15 @@ export default function PocHomepage() {
         </div>
       </section>
 
-      <section className="poc-seen-on" aria-label="As seen on">
+      <section className="poc-featured-video-section">
         <div className="poc-shell">
-          <p>As seen on</p>
-          <div className="poc-seen-on__logos">
-            {seenOn.map((item) => (
-              <span key={item.name}>
-                <img src={item.src} alt={item.name} loading="lazy" />
-              </span>
-            ))}
+          <p className="poc-kicker">Watch</p>
+          <div className="poc-featured-video__player">
+            <div className="poc-featured-video__placeholder">
+              <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><circle cx="40" cy="40" r="40" fill="rgba(240,90,0,0.1)"/><circle cx="40" cy="40" r="30" fill="rgba(240,90,0,0.15)"/><path d="M33 27l22 13-22 13V27z" fill="#F05A00"/></svg>
+              <p>Your featured video goes here</p>
+              <span>Replace with a YouTube embed, Loom, or Vimeo</span>
+            </div>
           </div>
         </div>
       </section>
@@ -224,7 +239,7 @@ export default function PocHomepage() {
           <div className="poc-copy">
             <p>You've tried ChatGPT. You've tried Claude. Maybe you got something running: a prototype that works on a good day, a no-code tool that got halfway, or a Notion setup held together with duct tape.</p>
             <p>But it is not something you would show a real customer. And every week it is not, the problem it was supposed to solve is still handled manually.</p>
-            <p>The gap between “almost works” and “actually works” is not a technology problem. It is a scoping problem: knowing what to fix, what to cut, and what to build next, in the right order.</p>
+            <p>The gap between "almost works" and "actually works" is not a technology problem. It is a scoping problem: knowing what to fix, what to cut, and what to build next, in the right order.</p>
             <p className="poc-copy__statement">That is what the next 30 days fixes.</p>
           </div>
         </div>
@@ -341,7 +356,23 @@ export default function PocHomepage() {
           <SectionLabel>08 / What people are saying</SectionLabel>
           <h2>Proof from people who <span>actually shipped.</span></h2>
           <div className="poc-testimonial-grid">
-            {testimonials.map(([quote, name, role]) => <figure key={name}><blockquote>“{quote}”</blockquote><figcaption><strong>{name}</strong><span>{role}</span></figcaption></figure>)}
+            {testimonials.map((t) => (
+              <figure key={t.name} className={t.youtubeId ? "poc-testimonial-card--video" : ""}>
+                {t.youtubeId ? (
+                  <div className="poc-testimonial-video">
+                    <iframe
+                      title={t.name}
+                      src={`https://www.youtube-nocookie.com/embed/${t.youtubeId}`}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : null}
+                <blockquote>"{t.quote}"</blockquote>
+                <figcaption><strong>{t.name}</strong><span>{t.role}</span></figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -381,8 +412,8 @@ export default function PocHomepage() {
           </div>
           <div className="poc-social-strip" aria-label="Social links">
             <p>More signal:</p>
-            {socialLinks.map(([label, href]) => (
-              <a href={href} target="_blank" rel="noreferrer" key={href}>{label}<Icon name="external" className="h-3 w-3" /></a>
+            {socialLinks.map(([label, href, id]) => (
+              <a href={href} target="_blank" rel="noreferrer" key={href} className={`poc-social-${id}`}>{label}<Icon name="external" className="h-3 w-3" /></a>
             ))}
           </div>
         </div>
