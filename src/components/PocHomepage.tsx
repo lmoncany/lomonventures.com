@@ -59,7 +59,7 @@ const seenOn = [
   { name: "France.tv", src: "/logos/france-tv.svg" },
   { name: "M6", src: "/logos/m6.svg" },
   { name: "French Touch Malta", src: "/logos/french-touch-malta.png" },
-  { name: "CoCoHub", src: "/logos/cocohub.png" },
+  { name: "CoCoHub", src: "/logos/cocohub.svg" },
   { name: "Flowr Agency", src: "/logos/flowr-agency.png" },
 ];
 
