@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "^mcp__claude-flow__.*$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"decision\": \"allow\", \"reason\": \"claude-flow MCP tool auto-approved\"}'",
+            "timeout": 1000
+          }
+        ]
+      },
+      {
+        "matcher": "^Bash\\(npx @?claude-flow.*\\)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"decision\": \"allow\", \"reason\": \"claude-flow CLI auto-approved\"}'",
+            "timeout": 1000
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"ok\": true}'",
+            "timeout": 1000
+          }
+        ]
+      }
+    ]
+  }
+}
