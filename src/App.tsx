@@ -4,11 +4,21 @@ import PocHomepage from "./components/PocHomepage";
 import { SiteFooter, SiteHeader } from "./components/SiteChrome";
 import type { MarketingPageKey, SiteLocale } from "./siteContent";
 
+const marketingPageKeys: MarketingPageKey[] = ["newsletter", "resources", "offers", "about", "vibedoctor", "roastmysaas"];
+const marketingPageTitles: Record<MarketingPageKey, string> = {
+  newsletter: "AI Caramba",
+  resources: "Resources",
+  offers: "Offers",
+  about: "About",
+  vibedoctor: "Vibedoctor",
+  roastmysaas: "RoastMySaas",
+};
+
 function getRoute() {
   const parts = window.location.pathname.split("/").filter(Boolean);
   const locale: SiteLocale = parts[0] === "fr" || parts[0] === "it" ? parts.shift() as SiteLocale : "en";
   const page = parts[0] as MarketingPageKey | undefined;
-  return { locale, page: page && ["newsletter", "resources", "offers", "about"].includes(page) ? page : undefined };
+  return { locale, page: page && marketingPageKeys.includes(page) ? page : undefined };
 }
 
 function App() {
@@ -22,7 +32,7 @@ function App() {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("lomon-theme", theme);
     document.title = route.page
-      ? `${route.page === "newsletter" ? "AI Caramba" : route.page[0].toUpperCase() + route.page.slice(1)} | Lomon Ventures`
+      ? `${marketingPageTitles[route.page]} | Lomon Ventures`
       : "Ship your software product in 30 days | Lomon Ventures";
     document
       .querySelector('meta[name="description"]')

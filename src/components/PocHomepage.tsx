@@ -1,15 +1,13 @@
-import { type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Icon from "./Icon";
 import {
 	homepageCopy,
-	type HomepageContent,
 	type SiteLocale,
 } from "../siteContent";
 
-const contactEmail = "lomonventures@gmail.com";
 const phoneDisplay = "+33 6 58 92 87 52";
 const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
+const tribeHref = "https://chat.whatsapp.com/JENTh7jL87qEF8layXTVWA?mode=gi_t";
 
 const seenOn = [
 	{ name: "TVM Malta", src: "/logos/tvm.webp" },
@@ -79,6 +77,21 @@ const socialLinks = [
 	["GitHub", "https://github.com/lmoncany", "gh"],
 ];
 
+const finalPanelCopy: Record<SiteLocale, { joinPrefix: string; note: string }> = {
+	en: {
+		joinPrefix: "Join the",
+		note: "No form, no funnel. Message me directly, or join the community if you want to stay close to the AI builders/operators circle.",
+	},
+	fr: {
+		joinPrefix: "Rejoindre",
+		note: "Pas de formulaire, pas de tunnel. Écrivez-moi directement, ou rejoignez la communauté pour rester proche des builders et opérateurs IA.",
+	},
+	it: {
+		joinPrefix: "Entra nella",
+		note: "Nessun form, nessun funnel. Scrivimi direttamente, oppure entra nella community se vuoi restare vicino a builder e operatori AI.",
+	},
+};
+
 interface Props {
 	locale: SiteLocale;
 }
@@ -89,92 +102,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Cta({ label, compact = false }: { label: string; compact?: boolean }) {
 	return (
-		<a href="#brief" className={`poc-cta ${compact ? "poc-cta--compact" : ""}`}>
+		<a
+			href={whatsappHref}
+			target="_blank"
+			rel="noreferrer"
+			className={`poc-cta ${compact ? "poc-cta--compact" : ""}`}
+		>
 			<span>{label}</span>
 			<Icon name="arrowRight" className="h-5 w-5" />
 		</a>
 	);
 }
 
-function BriefForm({ c }: { c: HomepageContent }) {
-	function handleSubmit(event: FormEvent<HTMLFormElement>) {
-		event.preventDefault();
-		const form = new FormData(event.currentTarget);
-		const el = c.emailLabels;
-		const body = [
-			`${el.name}: ${form.get("name")}`,
-			`${el.email}: ${form.get("email")}`,
-			"",
-			`${el.problem}\n${form.get("problem")}`,
-			"",
-			`${el.today}\n${form.get("today")}`,
-			"",
-			`${el.user}\n${form.get("user")}`,
-			"",
-			`${el.offer}: ${form.get("offer")}`,
-			"",
-			`${el.outcome}\n${form.get("outcome")}`,
-		].join("\n");
-		window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(c.emailSubject)}&body=${encodeURIComponent(body)}`;
-	}
-
-	return (
-		<form className="poc-brief-form" onSubmit={handleSubmit}>
-			<div className="poc-form-row">
-				<label>
-					{c.formName}
-					<input name="name" autoComplete="name" required />
-				</label>
-				<label>
-					{c.formEmail}
-					<input name="email" type="email" autoComplete="email" required />
-				</label>
-			</div>
-			<label>
-				{c.formProblem}
-				<textarea name="problem" rows={4} required />
-			</label>
-			<div className="poc-form-row">
-				<label>
-					{c.formToday}
-					<textarea
-						name="today"
-						rows={3}
-						placeholder={c.formTodayPlaceholder}
-						required
-					/>
-				</label>
-				<label>
-					{c.formUser}
-					<textarea name="user" rows={3} required />
-				</label>
-			</div>
-			<label>
-				{c.formOffer}
-				<select name="offer" required defaultValue="">
-					<option value="" disabled>
-						{c.formOfferPlaceholder}
-					</option>
-					{c.formOfferOptions.map((opt) => (
-						<option key={opt}>{opt}</option>
-					))}
-				</select>
-			</label>
-			<label>
-				{c.formOutcome}
-				<textarea name="outcome" rows={3} required />
-			</label>
-			<button className="poc-cta" type="submit">
-				<span>{c.formSubmit}</span>
-				<Icon name="arrowRight" className="h-5 w-5" />
-			</button>
-			<p>{c.formNote}</p>
-		</form>
-	);
-}
-
 export default function PocHomepage({ locale }: Props) {
 	const c = homepageCopy[locale];
+	const finalCopy = finalPanelCopy[locale];
 
 	return (
 		<main>
@@ -604,14 +546,20 @@ export default function PocHomepage({ locale }: Props) {
 							{c.briefH2Lead} <span>{c.briefH2Accent}</span>
 						</h2>
 						<p>{c.briefIntro}</p>
-						<div className="poc-contact-strip">
-							<a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-							<a href={whatsappHref} target="_blank" rel="noreferrer">
-								{c.whatsappLabel} {phoneDisplay}
-							</a>
-						</div>
 					</div>
-					<BriefForm c={c} />
+					<div className="poc-whatsapp-panel">
+						<a className="poc-whatsapp-panel__primary" href={whatsappHref} target="_blank" rel="noreferrer">
+							<span>{c.formSubmit}</span>
+							<strong>{c.whatsappLabel} {phoneDisplay}</strong>
+							<Icon name="whatsapp" className="h-6 w-6" />
+						</a>
+						<a className="poc-whatsapp-panel__secondary" href={tribeHref} target="_blank" rel="noreferrer">
+							<span>{finalCopy.joinPrefix}</span>
+							<strong>AI Tribe</strong>
+							<Icon name="external" className="h-5 w-5" />
+						</a>
+						<p>{finalCopy.note}</p>
+					</div>
 				</div>
 			</section>
 		</main>

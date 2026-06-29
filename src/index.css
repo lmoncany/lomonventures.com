@@ -667,18 +667,15 @@ button,select { font:inherit; }
 .poc-brief h2 { color:white; font-size:clamp(2rem,4vw,3.5rem); }
 .poc-brief h2 span { color:rgba(255,255,255,.25); }
 .poc-brief__grid > div > p:not(.poc-kicker) { max-width:440px; margin:22px 0; color:rgba(255,255,255,.45); line-height:1.8; font-size:15px; }
-.poc-contact-strip { display:grid; gap:8px; }
-.poc-contact-strip a { width:fit-content; color:var(--orange); font-size:13px; font-weight:600; }
-.poc-contact-strip a:hover { opacity:.75; }
-
-.poc-brief-form { display:grid; gap:18px; padding:clamp(24px,5vw,48px); border:1px solid rgba(255,255,255,.1); border-radius:12px; background:rgba(255,255,255,.04); }
-.poc-form-row { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
-.poc-brief-form label { display:grid; gap:8px; color:rgba(255,255,255,.5); font-size:11px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
-.poc-brief-form input,.poc-brief-form textarea,.poc-brief-form select { width:100%; border:1px solid rgba(255,255,255,.1); border-radius:8px; outline:none; background:rgba(255,255,255,.06); color:white; font:inherit; font-size:14px; padding:12px; transition:border-color .15s,box-shadow .15s; }
-.poc-brief-form textarea { resize:vertical; }
-.poc-brief-form input:focus,.poc-brief-form textarea:focus,.poc-brief-form select:focus { border-color:var(--orange); box-shadow:0 0 0 3px rgba(240,90,0,.15); }
-.poc-brief-form .poc-cta { border:0; cursor:pointer; background:var(--orange); color:white; }
-.poc-brief-form > p { margin:-4px 0 0; color:rgba(255,255,255,.22); font-size:10px; line-height:1.6; }
+.poc-whatsapp-panel { display:grid; gap:14px; padding:clamp(24px,5vw,48px); border:1px solid rgba(255,255,255,.1); border-radius:18px; background:rgba(255,255,255,.04); box-shadow:0 20px 80px rgba(0,0,0,.22); }
+.poc-whatsapp-panel a { position:relative; display:grid; min-height:132px; align-content:end; gap:6px; padding:22px; border-radius:14px; transition:transform .18s ease,border-color .18s ease,background .18s ease; }
+.poc-whatsapp-panel a:hover { transform:translateY(-2px); }
+.poc-whatsapp-panel__primary { border:1px solid rgba(37,211,102,.35); background:linear-gradient(135deg,rgba(37,211,102,.95),rgba(17,145,72,.95)); color:#06180d; box-shadow:0 18px 50px rgba(37,211,102,.18); }
+.poc-whatsapp-panel__secondary { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06); color:white; }
+.poc-whatsapp-panel span { font-size:11px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; opacity:.7; }
+.poc-whatsapp-panel strong { max-width:420px; font-size:clamp(1.55rem,3vw,2.55rem); line-height:1; letter-spacing:-.06em; }
+.poc-whatsapp-panel svg { position:absolute; top:22px; right:22px; }
+.poc-whatsapp-panel > p { margin:4px 0 0; color:rgba(255,255,255,.38); font-size:12px; line-height:1.7; }
 
 /* Decorative dashboard card */
 .poc-hero__brief { position:relative; padding:22px; border:1px solid var(--border-c); border-radius:14px; background:var(--surface); box-shadow:0 8px 40px rgba(0,0,0,.1); transform:rotate(1.5deg); }
@@ -832,12 +829,9 @@ button,select { font:inherit; }
 [data-theme="dark"] .poc-brief h2 { color:var(--ink); }
 [data-theme="dark"] .poc-brief h2 span { color:var(--faint); }
 [data-theme="dark"] .poc-brief__grid > div > p:not(.poc-kicker) { color:var(--muted); }
-[data-theme="dark"] .poc-brief-form { background:var(--surface); border-color:var(--border-c); }
-[data-theme="dark"] .poc-brief-form input,
-[data-theme="dark"] .poc-brief-form textarea,
-[data-theme="dark"] .poc-brief-form select { background:var(--bg-subtle); border-color:var(--border-c); color:var(--ink); }
-[data-theme="dark"] .poc-brief-form label { color:var(--muted); }
-[data-theme="dark"] .poc-brief-form > p { color:var(--faint); }
+[data-theme="dark"] .poc-whatsapp-panel { background:var(--surface); border-color:var(--border-c); box-shadow:none; }
+[data-theme="dark"] .poc-whatsapp-panel__secondary { background:var(--bg); border-color:var(--border-c); color:var(--ink); }
+[data-theme="dark"] .poc-whatsapp-panel > p { color:var(--muted); }
 
 /* ─────────────────────────────────────────────────────────────────
    REDUCED MOTION
@@ -905,6 +899,6 @@ button,select { font:inherit; }
   .poc-case-study > div:first-child,.poc-case-study__signals { padding:24px; }
   .poc-case-study h2 { font-size:2.4rem; }
   .poc-case-study__artifact { padding:24px; }
-  .poc-form-row { grid-template-columns:1fr; }
-  .poc-brief-form { padding:20px; }
+  .poc-whatsapp-panel { padding:20px; }
+  .poc-whatsapp-panel a { min-height:118px; }
 }

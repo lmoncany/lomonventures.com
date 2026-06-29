@@ -1,5 +1,5 @@
 export type SiteLocale = "en" | "fr" | "it";
-export type MarketingPageKey = "newsletter" | "resources" | "offers" | "about";
+export type MarketingPageKey = "newsletter" | "resources" | "offers" | "about" | "vibedoctor" | "roastmysaas";
 
 export const siteLocales: SiteLocale[] = ["en", "fr", "it"];
 
@@ -111,8 +111,38 @@ const englishPages = {
     note: "Direct work. Clear scope. You own what ships.",
     sections: [
       ["MVP in 30 days", "A focused product sprint for business owners who need the first useful version scoped, built, deployed, and handed over.", "/#build"],
-      ["Vibedoctor", "You built it with AI. It almost works. I diagnose the fragile parts, fix the critical issues, and help you finish your website or app."],
-      ["RoastMySaas", "A blunt positioning and conversion audit for SaaS founders who need to know why the page is not converting."],
+      ["Vibedoctor", "You built it with AI. It almost works. I diagnose the fragile parts, fix the critical issues, and help you finish your website or app.", "/vibedoctor"],
+      ["RoastMySaas", "A blunt positioning and conversion audit for SaaS founders who need to know why the page is not converting.", "/roastmysaas"],
+    ],
+  },
+  vibedoctor: {
+    code: "FIX",
+    eyebrow: "Vibedoctor",
+    title: "Your AI-built website or app almost works. Let’s make it usable.",
+    intro:
+      "A focused technical rescue for founders who built with AI tools and ended up with something impressive, fragile, and not quite ready to show customers.",
+    primary: "Send me the broken build",
+    primaryHref: "https://wa.me/33658928752?text=Hi%2C%20I%20need%20help%20fixing%20an%20AI-built%20website%20or%20app.",
+    note: "Send the URL, repo, screenshots, or a short Loom. I will tell you what is fragile before we commit to a fix.",
+    sections: [
+      ["Audit the mess", "I check the product like a senior developer would: broken flows, fragile code, missing states, confusing UX, deployment risks, and security basics."],
+      ["Fix what blocks usage", "The goal is not to rewrite everything. The goal is to repair the parts preventing a real person from using it confidently."],
+      ["Leave with control", "You get a clearer app, a short diagnosis, and a practical next-step list so you know what to maintain, rebuild, or ignore."],
+    ],
+  },
+  roastmysaas: {
+    code: "ROAST",
+    eyebrow: "RoastMySaas",
+    title: "A blunt audit for SaaS pages that are not converting.",
+    intro:
+      "I review your positioning, landing page, offer, onboarding path, and trust signals so you know what is confusing buyers before spending more on traffic.",
+    primary: "Send me the SaaS",
+    primaryHref: "https://wa.me/33658928752?text=Hi%2C%20I%20want%20a%20RoastMySaas%20audit.",
+    note: "Send the URL and the main conversion goal. I will look for the fastest path to clarity.",
+    sections: [
+      ["Positioning roast", "What do people understand in the first ten seconds? I flag vague claims, missing buyer language, weak category framing, and unclear outcomes."],
+      ["Conversion path", "I review the CTA, page structure, proof, pricing clarity, onboarding friction, and whether the page gives people enough reason to act."],
+      ["Action list", "You get a prioritized list of changes: what to rewrite, remove, move, test, or prove before touching ads or adding features."],
     ],
   },
   about: {
@@ -148,13 +178,17 @@ export const marketingPages: Record<SiteLocale, Record<MarketingPageKey, Marketi
   fr: {
     newsletter: { ...englishPages.newsletter, eyebrow: "La newsletter", title: "L'IA avance vite. Gardez seulement ce qui est utile.", intro: "AI Caramba est ma newsletter LinkedIn pratique sur les outils, évolutions et décisions produit qui méritent réellement votre attention.", primary: "Lire AI Caramba sur LinkedIn", note: "Publiée sur LinkedIn. Aucun nouvel abonnement à gérer.", sections: [["Des signaux, pas du bruit", "Des analyses courtes sur ce qui change, pourquoi c'est important et ce que les dirigeants peuvent ignorer."], ["Issue de la pratique", "Des leçons tirées de produits lancés, de workflows IA testés et d'automatisations réellement utiles."], ["Pour les opérateurs", "Écrite pour celles et ceux qui dirigent des entreprises et des produits, pas pour collectionner les outils IA."]] },
     resources: { ...englishPages.resources, eyebrow: "Ressources", title: "Réfléchir utile avant de construire cher.", intro: "Des méthodes, exemples et conseils directs pour transformer un processus métier, un tableur ou un prototype IA en logiciel utile.", primary: "Découvrir les offres", note: "Pas de bibliothèque de PDF cachée. Commencez par le blocage à supprimer.", sections: [["Cadrer avant de coder", "Comment réduire un produit à sa première version utile avant que le budget ne disparaisse."], ["AI Caramba", "Des mises à jour pratiques sur l'IA, l'automatisation et les outils qui méritent leur place dans vos opérations.", "/fr/newsletter"], ["Voir ce qui est livré", "Des produits réels dans l'immobilier, l'hospitality, la génération de leads, l'automobile et l'IA.", "/fr/#portfolio"]] },
-    offers: { ...englishPages.offers, eyebrow: "Travailler ensemble", title: "Commencer seul, lancer la demande ou faire construire le produit.", intro: "Lomon Ventures aide les dirigeants à transformer workflows, idées et prototypes IA incomplets en logiciels utiles, sans agence lourde ni freelance à gérer.", primary: "Parlez-moi de votre projet", note: "Travail direct. Scope clair. Vous possédez ce qui est livré.", sections: [["MVP en 30 jours", "Un sprint produit cadré pour livrer, déployer et transmettre une première version utile.", "/fr#build"], ["Vibedoctor", "Vous l'avez construit avec l'IA. Il fonctionne presque. Je diagnostique les parties fragiles, corrige les problèmes critiques et vous aide à terminer votre site ou app."], ["RoastMySaas", "Un audit direct de positionnement et de conversion pour comprendre pourquoi votre page ne transforme pas."]] },
+    offers: { ...englishPages.offers, eyebrow: "Travailler ensemble", title: "Commencer seul, lancer la demande ou faire construire le produit.", intro: "Lomon Ventures aide les dirigeants à transformer workflows, idées et prototypes IA incomplets en logiciels utiles, sans agence lourde ni freelance à gérer.", primary: "Parlez-moi de votre projet", note: "Travail direct. Scope clair. Vous possédez ce qui est livré.", sections: [["MVP en 30 jours", "Un sprint produit cadré pour livrer, déployer et transmettre une première version utile.", "/fr#build"], ["Vibedoctor", "Vous l'avez construit avec l'IA. Il fonctionne presque. Je diagnostique les parties fragiles, corrige les problèmes critiques et vous aide à terminer votre site ou app.", "/fr/vibedoctor"], ["RoastMySaas", "Un audit direct de positionnement et de conversion pour comprendre pourquoi votre page ne transforme pas.", "/fr/roastmysaas"]] },
+    vibedoctor: { ...englishPages.vibedoctor, eyebrow: "Vibedoctor", title: "Votre site ou app construit avec l'IA fonctionne presque. Rendons-le utilisable.", intro: "Une intervention ciblée pour les fondateurs qui ont construit avec des outils IA et se retrouvent avec quelque chose d'impressionnant, fragile, et pas encore montrable à des clients.", primary: "Envoyez-moi le build cassé", note: "Envoyez l'URL, le repo, des captures ou un court Loom. Je vous dirai ce qui est fragile avant de s'engager sur une correction.", sections: [["Auditer le chaos", "Je regarde le produit comme un développeur senior : parcours cassés, code fragile, états manquants, UX confuse, risques de déploiement et bases de sécurité."], ["Corriger ce qui bloque l'usage", "L'objectif n'est pas de tout réécrire. L'objectif est de réparer ce qui empêche une vraie personne d'utiliser le produit avec confiance."], ["Repartir avec le contrôle", "Vous repartez avec une app plus claire, un diagnostic court et une liste d'actions pour savoir quoi maintenir, reconstruire ou ignorer."]] },
+    roastmysaas: { ...englishPages.roastmysaas, eyebrow: "RoastMySaas", title: "Un audit direct pour les pages SaaS qui ne convertissent pas.", intro: "Je passe en revue votre positionnement, landing page, offre, onboarding et signaux de confiance pour comprendre ce qui bloque les acheteurs avant de dépenser plus en acquisition.", primary: "Envoyez-moi le SaaS", note: "Envoyez l'URL et l'objectif principal de conversion. Je chercherai le chemin le plus rapide vers plus de clarté.", sections: [["Roast du positionnement", "Que comprend-on dans les dix premières secondes ? Je pointe les promesses vagues, le langage trop interne, le cadrage flou et les résultats absents."], ["Parcours de conversion", "Je regarde le CTA, la structure, les preuves, la clarté du pricing, les frictions d'onboarding et les raisons d'agir."], ["Liste d'actions", "Vous obtenez une liste priorisée : quoi réécrire, supprimer, déplacer, tester ou prouver avant de toucher aux ads ou aux features."]] },
     about: { ...englishPages.about, eyebrow: "Loïc Moncany · Fondateur-développeur", title: "La plupart des développeurs prennent des tickets. Mon travail est de protéger le produit.", intro: "Après 15+ ans dans le web et six ans à diriger une agence digitale à Malte, je construis mes produits et aide certains dirigeants à transformer leur expertise métier en logiciel utile.", primary: "Parlez-moi du problème", note: "Travail direct uniquement. Aucun intermédiaire.", sections: [["Des produits, pas des listes de fonctionnalités", "La partie difficile est rarement d'écrire plus de code. C'est décider ce qui mérite d'exister dans la première version."], ["Le contexte métier compte", "Un CRM immobilier, un système hospitality ou un workflow IA fonctionne seulement si le contexte métier fait partie du build."], ["Un partenaire, pas un prestataire", "Ni une grande agence, ni une simple paire de mains freelance. Un partenaire produit capable de challenger le scope et de livrer le code."]] },
   },
   it: {
     newsletter: { ...englishPages.newsletter, eyebrow: "La newsletter", title: "L'AI corre veloce. Tieni solo ciò che serve.", intro: "AI Caramba è la mia newsletter LinkedIn pratica sugli strumenti, i cambiamenti e le decisioni prodotto che meritano davvero attenzione.", primary: "Leggi AI Caramba su LinkedIn", note: "Pubblicata su LinkedIn. Nessuna nuova inbox da gestire.", sections: [["Segnali, non rumore", "Analisi brevi su cosa è cambiato, perché conta e cosa chi gestisce un'azienda può tranquillamente ignorare."], ["Nata dalla pratica", "Lezioni tratte dal lancio di prodotti, dai workflow AI testati e dall'automazione che aiuta davvero."], ["Per chi opera", "Scritta per chi gestisce aziende e prodotti, non per chi colleziona strumenti AI."]] },
     resources: { ...englishPages.resources, eyebrow: "Risorse", title: "Pensiero utile prima di software costoso.", intro: "Framework, esempi e consigli diretti per trasformare un processo aziendale, un foglio di calcolo o un prototipo AI in software utile.", primary: "Scopri le offerte", note: "Nessuna libreria di PDF nascosta. Parti dal collo di bottiglia da eliminare.", sections: [["Scope prima del codice", "Come ridurre un prodotto alla prima versione utile prima che il budget sparisca."], ["AI Caramba", "Aggiornamenti pratici su AI, automazione e strumenti che meritano un posto nelle tue operazioni.", "/it/newsletter"], ["Guarda cosa viene consegnato", "Prodotti reali in real estate, hospitality, lead generation, automotive e AI.", "/it/#portfolio"]] },
-    offers: { ...englishPages.offers, eyebrow: "Come lavorare insieme", title: "Inizia da solo, lancia la domanda o fai costruire il prodotto.", intro: "Lomon Ventures aiuta business owner a trasformare workflow, idee e prototipi AI incompleti in software utile, senza agenzia pesante o freelance da gestire.", primary: "Raccontami cosa vuoi costruire", note: "Lavoro diretto. Scope chiaro. Il codice resta tuo.", sections: [["MVP in 30 giorni", "Uno sprint prodotto focalizzato per consegnare, deployare e passare una prima versione utile.", "/it#build"], ["Vibedoctor", "L'hai costruito con l'AI. Funziona quasi. Diagnostico le parti fragili, risolvo i problemi critici e ti aiuto a finire sito o app."], ["RoastMySaas", "Un audit diretto di posizionamento e conversione per capire perché la pagina non converte."]] },
+    offers: { ...englishPages.offers, eyebrow: "Come lavorare insieme", title: "Inizia da solo, lancia la domanda o fai costruire il prodotto.", intro: "Lomon Ventures aiuta business owner a trasformare workflow, idee e prototipi AI incompleti in software utile, senza agenzia pesante o freelance da gestire.", primary: "Raccontami cosa vuoi costruire", note: "Lavoro diretto. Scope chiaro. Il codice resta tuo.", sections: [["MVP in 30 giorni", "Uno sprint prodotto focalizzato per consegnare, deployare e passare una prima versione utile.", "/it#build"], ["Vibedoctor", "L'hai costruito con l'AI. Funziona quasi. Diagnostico le parti fragili, risolvo i problemi critici e ti aiuto a finire sito o app.", "/it/vibedoctor"], ["RoastMySaas", "Un audit diretto di posizionamento e conversione per capire perché la pagina non converte.", "/it/roastmysaas"]] },
+    vibedoctor: { ...englishPages.vibedoctor, eyebrow: "Vibedoctor", title: "Il tuo sito o app costruito con l'AI funziona quasi. Rendiamolo usabile.", intro: "Un intervento tecnico mirato per founder che hanno costruito con strumenti AI e ora hanno qualcosa di impressionante, fragile e non ancora pronto per i clienti.", primary: "Mandami il build rotto", note: "Manda URL, repo, screenshot o un breve Loom. Ti dirò cosa è fragile prima di impegnarci sulla correzione.", sections: [["Audit del caos", "Controllo il prodotto come farebbe uno sviluppatore senior: flow rotti, codice fragile, stati mancanti, UX confusa, rischi di deploy e basi di sicurezza."], ["Fix di ciò che blocca l'uso", "L'obiettivo non è riscrivere tutto. È riparare le parti che impediscono a una persona reale di usare il prodotto con fiducia."], ["Riprendi controllo", "Ottieni un'app più chiara, una diagnosi breve e una lista pratica per sapere cosa mantenere, ricostruire o ignorare."]] },
+    roastmysaas: { ...englishPages.roastmysaas, eyebrow: "RoastMySaas", title: "Un audit diretto per pagine SaaS che non convertono.", intro: "Rivedo posizionamento, landing page, offerta, onboarding e segnali di fiducia per capire cosa confonde i buyer prima di spendere ancora in traffico.", primary: "Mandami il SaaS", note: "Manda l'URL e l'obiettivo principale di conversione. Cercherò il percorso più veloce verso la chiarezza.", sections: [["Roast del posizionamento", "Cosa capiscono le persone nei primi dieci secondi? Segnalo claim vaghi, linguaggio interno, categoria poco chiara e risultati assenti."], ["Percorso di conversione", "Rivedo CTA, struttura pagina, prove, chiarezza del pricing, frizioni onboarding e motivi per agire."], ["Lista d'azione", "Ricevi una lista prioritaria: cosa riscrivere, rimuovere, spostare, testare o provare prima di toccare ads o feature."]] },
     about: { ...englishPages.about, eyebrow: "Loïc Moncany · Founder-developer", title: "La maggior parte degli sviluppatori prende ticket. Il mio lavoro è proteggere il prodotto.", intro: "Dopo 15+ anni nel web e sei anni alla guida di un'agenzia digitale a Malta, costruisco prodotti e aiuto business owner a trasformare una forte conoscenza del mercato in software utile.", primary: "Raccontami il problema", note: "Lavoro diretto. Nessun account manager o passaggio di consegne.", sections: [["Prodotti, non liste di funzionalità", "La parte difficile raramente è scrivere più codice. È decidere cosa merita di esistere nella prima versione."], ["Il contesto operativo conta", "Un CRM immobiliare, un sistema hospitality o un workflow AI funziona solo se il contesto business entra nel build."], ["Un partner, non un vendor", "Non una grande agenzia. Non un semplice freelance. Un partner di prodotto capace di sfidare lo scope e spedire il codice."]] },
   },
 };
@@ -290,7 +324,7 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     briefKicker: "Start here",
     briefH2Lead: "You keep running the business.",
     briefH2Accent: "The tool stops being the bottleneck.",
-    briefIntro: "Fill in a short brief about your idea, workflow, or half-built product. You will receive an honest assessment within 48 hours before any commitment.",
+    briefIntro: "Message me directly on WhatsApp with the idea, workflow, or half-built product. I will reply with a clear next step before any commitment.",
     whatsappLabel: "WhatsApp",
     formName: "Name",
     formEmail: "Email",
@@ -302,7 +336,7 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     formOfferPlaceholder: "Select an offer",
     formOfferOptions: ["Ship · €99 boilerplate", "Launch · €997 landing page", "Build · €5,000 product sprint", "Not sure yet"],
     formOutcome: "What would make the next 30 days successful?",
-    formSubmit: "Send the brief",
+    formSubmit: "Message me on WhatsApp",
     formNote: "Submitting opens a pre-filled email. No commitment, no payment, no sales sequence.",
     emailSubject: "Product build brief",
     emailLabels: { name: "Name", email: "Email", problem: "What are you trying to build?", today: "What do you already have?", user: "Who is it for?", offer: "Preferred offer", outcome: "What would make the next 30 days successful?" },
@@ -435,7 +469,7 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     briefKicker: "Commencez ici",
     briefH2Lead: "Vous continuez à gérer votre business.",
     briefH2Accent: "L'outil cesse d'être le goulot d'étranglement.",
-    briefIntro: "Remplissez un brief sur votre idée, workflow ou produit à moitié construit. Vous recevrez une évaluation honnête sous 48 heures, sans engagement.",
+    briefIntro: "Écrivez-moi directement sur WhatsApp avec votre idée, workflow ou produit à moitié construit. Je vous répondrai avec une prochaine étape claire, sans engagement.",
     whatsappLabel: "WhatsApp",
     formName: "Nom",
     formEmail: "Email",
@@ -447,7 +481,7 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     formOfferPlaceholder: "Choisir une offre",
     formOfferOptions: ["Ship · boilerplate 99 €", "Launch · landing page 997 €", "Build · sprint produit 5 000 €", "Pas encore décidé"],
     formOutcome: "Qu'est-ce qui rendrait les 30 prochains jours réussis ?",
-    formSubmit: "Envoyer le brief",
+    formSubmit: "Écrivez-moi sur WhatsApp",
     formNote: "La soumission ouvre un email pré-rempli. Aucun engagement, aucun paiement, aucune séquence commerciale.",
     emailSubject: "Brief projet produit",
     emailLabels: { name: "Nom", email: "Email", problem: "Qu'est-ce que vous essayez de construire ?", today: "Qu'avez-vous déjà ?", user: "Pour qui est-ce ?", offer: "Offre préférée", outcome: "Qu'est-ce qui rendrait les 30 prochains jours réussis ?" },
@@ -580,7 +614,7 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     briefKicker: "Inizia qui",
     briefH2Lead: "Continui a gestire il business.",
     briefH2Accent: "Lo strumento smette di essere il collo di bottiglia.",
-    briefIntro: "Compila un breve brief sulla tua idea, workflow o prodotto a metà costruzione. Riceverai una valutazione onesta entro 48 ore, senza impegno.",
+    briefIntro: "Scrivimi direttamente su WhatsApp con la tua idea, workflow o prodotto a metà costruzione. Ti risponderò con un prossimo passo chiaro, senza impegno.",
     whatsappLabel: "WhatsApp",
     formName: "Nome",
     formEmail: "Email",
@@ -592,7 +626,7 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     formOfferPlaceholder: "Seleziona un'offerta",
     formOfferOptions: ["Ship · boilerplate €99", "Launch · landing page €997", "Build · sprint prodotto €5.000", "Non ancora sicuro"],
     formOutcome: "Cosa renderebbe i prossimi 30 giorni un successo?",
-    formSubmit: "Invia il brief",
+    formSubmit: "Scrivimi su WhatsApp",
     formNote: "L'invio apre un'email pre-compilata. Nessun impegno, nessun pagamento, nessuna sequenza di vendita.",
     emailSubject: "Brief progetto prodotto",
     emailLabels: { name: "Nome", email: "Email", problem: "Cosa stai cercando di costruire?", today: "Cosa hai già?", user: "Per chi è?", offer: "Offerta preferita", outcome: "Cosa renderebbe i prossimi 30 giorni un successo?" },

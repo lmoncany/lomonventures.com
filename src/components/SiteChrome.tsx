@@ -20,19 +20,19 @@ interface SiteChromeProps {
 const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
 const offerNavItems: Record<SiteLocale, [string, string, string][]> = {
   en: [
-    ["MVP in 30 days", "#mvp-in-30-days", "Scope, build, handover"],
-    ["Vibedoctor", "#vibedoctor", "We fix your AI website/app"],
-    ["RoastMySaas", "#roastmysaas", "Positioning and conversion audit"],
+    ["MVP in 30 days", "/offers#mvp-in-30-days", "Scope, build, handover"],
+    ["Vibedoctor", "/vibedoctor", "We fix your AI website/app"],
+    ["RoastMySaas", "/roastmysaas", "Positioning and conversion audit"],
   ],
   fr: [
-    ["MVP en 30 jours", "#mvp-en-30-jours", "Cadrage, build, transmission"],
-    ["Vibedoctor", "#vibedoctor", "Votre site/app IA corrigé"],
-    ["RoastMySaas", "#roastmysaas", "Audit positionnement et conversion"],
+    ["MVP en 30 jours", "/fr/offers#mvp-en-30-jours", "Cadrage, build, transmission"],
+    ["Vibedoctor", "/fr/vibedoctor", "Votre site/app IA corrigé"],
+    ["RoastMySaas", "/fr/roastmysaas", "Audit positionnement et conversion"],
   ],
   it: [
-    ["MVP in 30 giorni", "#mvp-in-30-giorni", "Scope, build, consegna"],
-    ["Vibedoctor", "#vibedoctor", "Fix per siti/app AI"],
-    ["RoastMySaas", "#roastmysaas", "Audit posizionamento e conversione"],
+    ["MVP in 30 giorni", "/it/offers#mvp-in-30-giorni", "Scope, build, consegna"],
+    ["Vibedoctor", "/it/vibedoctor", "Fix per siti/app AI"],
+    ["RoastMySaas", "/it/roastmysaas", "Audit posizionamento e conversione"],
   ],
 };
 const footerSocialLinks = [
@@ -66,8 +66,8 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
               <Icon name="arrowRight" className="h-3 w-3" />
             </a>
             <div className="poc-nav-menu__panel">
-              {offerNavItems[locale].map(([label, hash, description]) => (
-                <a href={withHash(offersPath, hash)} key={label}><span>{label}</span><small>{description}</small></a>
+              {offerNavItems[locale].map(([label, href, description]) => (
+                <a href={href} key={label}><span>{label}</span><small>{description}</small></a>
               ))}
             </div>
           </div>
