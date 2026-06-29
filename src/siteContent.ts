@@ -242,7 +242,7 @@ export interface HomepageContent {
   offerFeaturedLabel: string;
   process: [string, string, string, string][];
   operatingPrinciples: [string, string][];
-  offers: [string, string, string, string, string[], string, string | undefined][];
+  offers: [string, string, string, string, string[], string][];
   comparison: string[][];
   fit: string[];
   notFit: string[];
@@ -253,15 +253,15 @@ export interface HomepageContent {
 
 export const homepageCopy: Record<SiteLocale, HomepageContent> = {
   en: {
-    chip: "Founder-led software studio",
-    h1Lead: "You've been trying\nto build this",
-    h1Accent: "for months.",
-    sub: "Bring the idea, spreadsheet, half-built prototype, or Claude conversation that got you 60% there. The scope gets fixed, the product gets built, and a working version ships in ",
-    subHighlight: "30 days for €5,000",
-    proof: ["6 products shipped", "15+ years building for the web", "Direct work, no account managers"],
+    chip: "We build tools that fit your business — not the other way around.",
+    h1Lead: "We build tools that fit\nyour business.",
+    h1Accent: "Not the other way around.",
+    sub: "Most software forces your team to change how they work. Lomon Ventures starts with how you already operate — and builds exactly that. ",
+    subHighlight: "Nothing more. In 30 days",
+    proof: ["Built around your workflow", "15+ years building for the web", "Direct work, no account managers"],
     actionNote: "Fill in a short brief. You'll receive an honest reply within 48 hours.",
     seenOnLabel: "As seen on",
-    trustLabel: "Real products. Real operators. Real markets.",
+    trustLabel: "“Loic is a secret weapon in web dev.” — Teri Yu, Product @ OpenAI · Ex Vibely",
     trustLogos: ["Real estate", "Hospitality tech", "Automotive", "Lead generation", "AI workflows", "Internal tools"],
     videoKicker: "Watch",
     videoPlaceholder: "Your featured video goes here",
@@ -334,9 +334,9 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     formUser: "Who is it for?",
     formOffer: "Which offer feels closest?",
     formOfferPlaceholder: "Select an offer",
-    formOfferOptions: ["Ship · €99 boilerplate", "Launch · €997 landing page", "Build · €5,000 product sprint", "Not sure yet"],
+    formOfferOptions: ["MVP in 30 days", "RoastMySaas", "VibeDoctor", "Not sure yet"],
     formOutcome: "What would make the next 30 days successful?",
-    formSubmit: "Message me on WhatsApp",
+    formSubmit: "Say Hi",
     formNote: "Submitting opens a pre-filled email. No commitment, no payment, no sales sequence.",
     emailSubject: "Product build brief",
     emailLabels: { name: "Name", email: "Email", problem: "What are you trying to build?", today: "What do you already have?", user: "Who is it for?", offer: "Preferred offer", outcome: "What would make the next 30 days successful?" },
@@ -354,9 +354,9 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
       ["You own what ships", "The codebase, documentation, and roadmap leave with you. No lock-in, no vague dependency."],
     ],
     offers: [
-      ["Ship", "€99", "one-time", "The exact foundation used to build the Lomon portfolio, ready to clone and go.", ["Production-ready boilerplate", "Auth, database, and AI layer", "Vercel deployment ready", "Async Q&A within 24h", "Lifetime updates"], "For founders who can build and need the right foundation.", undefined],
-      ["Launch", "€997", "one-time", "A landing page that converts, designed, built, and live in 7 days.", ["Copy, design, and development", "Built on your stack or mine", "Mobile, fast, deployed", "One revision round included"], "For founders who need leads before the product is ready.", undefined],
-      ["Build", "€5,000", "30 days", "You bring the problem. The scope gets cut, built, shipped, and handed over.", ["Week 1: scope and cut", "Weeks 2-3: build", "Week 4: handover", "Full codebase documented", "No retainer or surprise invoice"], "For business owners who need the tool without babysitting a developer.", "featured"],
+      ["mvp-in-30-days", "MVP in 30 days", "Build the first useful version", "A focused product sprint for business owners who need a real workflow turned into software without managing freelancers or bloated agency scope.", ["Scope around the real business workflow", "Working prototype or MVP", "Deployed, documented, and handed over", "Clear next-step plan after launch"], "For business owners who know the problem and need the first useful version shipped."],
+      ["roastmysaas", "RoastMySaas", "Fix the message before the product", "A direct audit of your SaaS positioning, landing page, onboarding path, and trust signals so you know why people are not converting.", ["Positioning and headline teardown", "Landing page conversion review", "CTA, proof, pricing, and onboarding friction", "Prioritized action list"], "For SaaS founders who need clarity before spending more on traffic or features."],
+      ["vibedoctor", "VibeDoctor", "Rescue your AI-built app", "You built it with AI. It almost works. I diagnose the fragile parts, fix the critical issues, and help you turn it into something usable.", ["Broken flows and UX diagnosis", "Critical bug and deployment fixes", "Security and maintainability basics", "Practical rebuild-or-repair plan"], "For founders with an AI-built site or app that is impressive but still too fragile to show customers."],
     ],
     comparison: [
       ["Delivery", "Instant", "7 days", "30 days", "60-90 days", "3-6 months"],
@@ -398,15 +398,15 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
   },
 
   fr: {
-    chip: "Studio logiciel fondateur",
-    h1Lead: "Vous essayez de\nconstruire ça",
-    h1Accent: "depuis des mois.",
-    sub: "Apportez l'idée, le tableur, le prototype à moitié construit ou la conversation Claude qui vous a amené à 60 %. Le scope est fixé, le produit est construit, et une version fonctionnelle livre en ",
-    subHighlight: "30 jours pour 5 000 €",
-    proof: ["6 produits livrés", "15+ ans à construire pour le web", "Travail direct, sans intermédiaires"],
+    chip: "On construit des outils adaptés à votre business — pas l'inverse.",
+    h1Lead: "On construit des outils adaptés\nà votre business.",
+    h1Accent: "Pas l'inverse.",
+    sub: "La plupart des logiciels forcent votre équipe à changer sa façon de travailler. Lomon Ventures part de votre manière d'opérer — puis construit exactement ça. ",
+    subHighlight: "Rien de plus. En 30 jours",
+    proof: ["Construit autour de votre workflow", "15+ ans à construire pour le web", "Travail direct, sans intermédiaires"],
     actionNote: "Remplissez un brief rapide. Vous recevrez une réponse honnête sous 48 heures.",
     seenOnLabel: "Vu sur",
-    trustLabel: "Vrais produits. Vrais opérateurs. Vrais marchés.",
+    trustLabel: "“Loic is a secret weapon in web dev.” — Teri Yu, Product @ OpenAI · Ex Vibely",
     trustLogos: ["Immobilier", "Tech hospitality", "Automobile", "Génération de leads", "Workflows IA", "Outils internes"],
     videoKicker: "Regarder",
     videoPlaceholder: "Votre vidéo vedette ici",
@@ -479,9 +479,9 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     formUser: "Pour qui est-ce ?",
     formOffer: "Quelle offre vous semble la plus proche ?",
     formOfferPlaceholder: "Choisir une offre",
-    formOfferOptions: ["Ship · boilerplate 99 €", "Launch · landing page 997 €", "Build · sprint produit 5 000 €", "Pas encore décidé"],
+    formOfferOptions: ["MVP en 30 jours", "RoastMySaas", "VibeDoctor", "Pas encore décidé"],
     formOutcome: "Qu'est-ce qui rendrait les 30 prochains jours réussis ?",
-    formSubmit: "Écrivez-moi sur WhatsApp",
+    formSubmit: "Say Hi",
     formNote: "La soumission ouvre un email pré-rempli. Aucun engagement, aucun paiement, aucune séquence commerciale.",
     emailSubject: "Brief projet produit",
     emailLabels: { name: "Nom", email: "Email", problem: "Qu'est-ce que vous essayez de construire ?", today: "Qu'avez-vous déjà ?", user: "Pour qui est-ce ?", offer: "Offre préférée", outcome: "Qu'est-ce qui rendrait les 30 prochains jours réussis ?" },
@@ -499,9 +499,9 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
       ["Vous possédez ce qui est livré", "Le codebase, la documentation et la roadmap partent avec vous. Pas de lock-in, pas de dépendance vague."],
     ],
     offers: [
-      ["Ship", "99 €", "unique", "Exactement la fondation utilisée pour construire le portfolio Lomon, prête à cloner et utiliser.", ["Boilerplate production-ready", "Couche auth, base de données et IA", "Déploiement Vercel prêt", "Q&A async sous 24h", "Mises à jour à vie"], "Pour les fondateurs qui peuvent construire et ont besoin de la bonne fondation.", undefined],
-      ["Launch", "997 €", "unique", "Une landing page qui convertit, conçue, construite et en ligne en 7 jours.", ["Copywriting, design et développement", "Sur votre stack ou le mien", "Mobile, rapide, déployé", "Un tour de révision inclus"], "Pour les fondateurs qui ont besoin de leads avant que le produit soit prêt.", undefined],
-      ["Build", "5 000 €", "30 jours", "Vous apportez le problème. Le scope est coupé, construit, livré et transmis.", ["Semaine 1 : scope et coupe", "Semaines 2-3 : construction", "Semaine 4 : transmission", "Codebase entier documenté", "Pas de rétainer ni de facture surprise"], "Pour les dirigeants qui ont besoin de l'outil sans babysitter un développeur.", "featured"],
+      ["mvp-en-30-jours", "MVP en 30 jours", "Construire la première version utile", "Un sprint produit ciblé pour transformer un vrai workflow métier en logiciel, sans gérer freelance ni scope d'agence trop lourd.", ["Scope autour du workflow réel", "Prototype ou MVP fonctionnel", "Déployé, documenté et transmis", "Plan clair pour la suite"], "Pour les dirigeants qui connaissent le problème et veulent livrer une première version utile."],
+      ["roastmysaas", "RoastMySaas", "Corriger le message avant le produit", "Un audit direct de votre positionnement SaaS, landing page, onboarding et signaux de confiance pour comprendre pourquoi les visiteurs ne convertissent pas.", ["Audit du positionnement et du titre", "Revue conversion de la landing page", "CTA, preuves, pricing et frictions onboarding", "Liste d'actions priorisée"], "Pour les fondateurs SaaS qui veulent clarifier avant de dépenser plus en trafic ou features."],
+      ["vibedoctor", "VibeDoctor", "Sauver votre app construite avec l'IA", "Vous l'avez construite avec l'IA. Elle fonctionne presque. Je diagnostique les parties fragiles, corrige les blocages critiques et la rends utilisable.", ["Diagnostic des parcours cassés et de l'UX", "Corrections bugs critiques et déploiement", "Bases sécurité et maintenabilité", "Plan réparer-ou-reconstruire"], "Pour les fondateurs avec un site ou une app IA impressionnant mais encore trop fragile pour les clients."],
     ],
     comparison: [
       ["Livraison", "Immédiat", "7 jours", "30 jours", "60-90 jours", "3-6 mois"],
@@ -543,15 +543,15 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
   },
 
   it: {
-    chip: "Studio software fondato da un imprenditore",
-    h1Lead: "Stai cercando di\nconstruire questo",
-    h1Accent: "da mesi.",
-    sub: "Porta l'idea, il foglio di calcolo, il prototipo a metà o la conversazione con Claude che ti ha portato al 60%. Lo scope viene definito, il prodotto viene costruito e una versione funzionante viene consegnata in ",
-    subHighlight: "30 giorni per €5.000",
-    proof: ["6 prodotti consegnati", "15+ anni a costruire per il web", "Lavoro diretto, senza intermediari"],
+    chip: "Costruiamo strumenti adatti al tuo business — non il contrario.",
+    h1Lead: "Costruiamo strumenti adatti\nal tuo business.",
+    h1Accent: "Non il contrario.",
+    sub: "La maggior parte dei software obbliga il team a cambiare modo di lavorare. Lomon Ventures parte da come operate già — e costruisce esattamente quello. ",
+    subHighlight: "Niente di più. In 30 giorni",
+    proof: ["Costruito attorno al tuo workflow", "15+ anni a costruire per il web", "Lavoro diretto, senza intermediari"],
     actionNote: "Compila un breve brief. Riceverai una risposta onesta entro 48 ore.",
     seenOnLabel: "Come visto su",
-    trustLabel: "Prodotti reali. Operatori reali. Mercati reali.",
+    trustLabel: "“Loic is a secret weapon in web dev.” — Teri Yu, Product @ OpenAI · Ex Vibely",
     trustLogos: ["Immobiliare", "Tech hospitality", "Automotive", "Lead generation", "Workflow IA", "Strumenti interni"],
     videoKicker: "Guarda",
     videoPlaceholder: "Il tuo video in evidenza va qui",
@@ -624,9 +624,9 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
     formUser: "Per chi è?",
     formOffer: "Quale offerta ti sembra più vicina?",
     formOfferPlaceholder: "Seleziona un'offerta",
-    formOfferOptions: ["Ship · boilerplate €99", "Launch · landing page €997", "Build · sprint prodotto €5.000", "Non ancora sicuro"],
+    formOfferOptions: ["MVP in 30 giorni", "RoastMySaas", "VibeDoctor", "Non ancora sicuro"],
     formOutcome: "Cosa renderebbe i prossimi 30 giorni un successo?",
-    formSubmit: "Scrivimi su WhatsApp",
+    formSubmit: "Say Hi",
     formNote: "L'invio apre un'email pre-compilata. Nessun impegno, nessun pagamento, nessuna sequenza di vendita.",
     emailSubject: "Brief progetto prodotto",
     emailLabels: { name: "Nome", email: "Email", problem: "Cosa stai cercando di costruire?", today: "Cosa hai già?", user: "Per chi è?", offer: "Offerta preferita", outcome: "Cosa renderebbe i prossimi 30 giorni un successo?" },
@@ -644,9 +644,9 @@ export const homepageCopy: Record<SiteLocale, HomepageContent> = {
       ["Possiedi ciò che viene consegnato", "Il codebase, la documentazione e la roadmap escono con te. Nessun lock-in, nessuna dipendenza vaga."],
     ],
     offers: [
-      ["Ship", "€99", "una tantum", "Esattamente la fondazione usata per costruire il portfolio Lomon, pronta da clonare e usare.", ["Boilerplate production-ready", "Layer auth, database e AI", "Pronto per deploy su Vercel", "Q&A asincrono entro 24h", "Aggiornamenti a vita"], "Per i founder che possono costruire e hanno bisogno della giusta fondazione.", undefined],
-      ["Launch", "€997", "una tantum", "Una landing page che converte, progettata, costruita e online in 7 giorni.", ["Copywriting, design e sviluppo", "Sul tuo stack o il mio", "Mobile, veloce, deployato", "Un round di revisione incluso"], "Per i founder che hanno bisogno di lead prima che il prodotto sia pronto.", undefined],
-      ["Build", "€5.000", "30 giorni", "Porti il problema. Lo scope viene tagliato, costruito, consegnato e trasferito.", ["Settimana 1: scope e taglio", "Settimane 2-3: build", "Settimana 4: consegna", "Codebase completo documentato", "Nessun retainer o fattura sorpresa"], "Per i business owner che hanno bisogno dello strumento senza fare da babysitter a uno sviluppatore.", "featured"],
+      ["mvp-in-30-giorni", "MVP in 30 giorni", "Costruire la prima versione utile", "Uno sprint prodotto focalizzato per trasformare un vero workflow business in software, senza gestire freelance o scope d'agenzia troppo pesanti.", ["Scope attorno al workflow reale", "Prototype o MVP funzionante", "Deployato, documentato e consegnato", "Piano chiaro per il passo successivo"], "Per business owner che conoscono il problema e vogliono spedire la prima versione utile."],
+      ["roastmysaas", "RoastMySaas", "Correggere il messaggio prima del prodotto", "Un audit diretto di posizionamento SaaS, landing page, onboarding e segnali di fiducia per capire perché le persone non convertono.", ["Audit posizionamento e headline", "Review conversione landing page", "CTA, prove, pricing e frizioni onboarding", "Lista azioni prioritaria"], "Per founder SaaS che vogliono chiarezza prima di spendere altro in traffico o feature."],
+      ["vibedoctor", "VibeDoctor", "Salvare la tua app costruita con AI", "L'hai costruita con l'AI. Funziona quasi. Diagnostico le parti fragili, risolvo i blocchi critici e la rendo usabile.", ["Diagnosi flow rotti e UX", "Fix bug critici e deploy", "Basi sicurezza e manutenzione", "Piano ripara-o-ricostruisci"], "Per founder con un sito o app AI impressionante ma ancora troppo fragile per i clienti."],
     ],
     comparison: [
       ["Consegna", "Immediata", "7 giorni", "30 giorni", "60-90 giorni", "3-6 mesi"],

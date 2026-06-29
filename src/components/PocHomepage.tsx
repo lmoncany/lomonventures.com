@@ -33,13 +33,21 @@ const testimonials = [
 			"Loic a cree mon CRM et mon site internet. Excellente collaboration. Les produits que Loic a développé pour nous fonctionne parfaitement.",
 		name: "Thierry Martino",
 		role: "Designer / Owner at SoulFetish · A-Meego client",
+		logos: [
+			{ name: "SoulFetish", src: "/logos/soulfetish.png", tone: "light" },
+			{ name: "A-Meego", src: "/logos/a-meego.png", tone: "dark" },
+		],
 		youtubeId: null,
 	},
 	{
 		quote:
 			"Loic is a secret weapon in web dev. It was complete in 2 days, polished with animations, and built with clean code.",
 		name: "Teri Yu",
-		role: "Product @ OpenAI · Founder, exited to Kajabi",
+		role: "Product @ OpenAI · Ex Vibely",
+		logos: [
+			{ name: "OpenAI", src: "/logos/openai.svg", tone: "light" },
+			{ name: "Kajabi", src: "/logos/kajabi.svg", tone: "light" },
+		],
 		youtubeId: null,
 	},
 	{
@@ -47,18 +55,21 @@ const testimonials = [
 			"Très à l'écoute, produisant un travail de qualité, soigné et dans les délais impartis à chaque mission.",
 		name: "Manuel Rohaut",
 		role: "Client recommendation",
+		logos: [],
 		youtubeId: null,
 	},
 	{
 		quote: "Luc Thilliez talks about his experience working with Flowr Agency.",
 		name: "Luc Thilliez",
 		role: "Client · Flowr Agency",
+		logos: [{ name: "Flowr Agency", src: "/logos/flowr-agency.png", tone: "light" }],
 		youtubeId: "1DJwVajzCbo",
 	},
 	{
 		quote: "Amin Lams shares his experience working with the agency.",
 		name: "Amin Lams",
 		role: "Client · Flowr Agency",
+		logos: [{ name: "Flowr Agency", src: "/logos/flowr-agency.png", tone: "light" }],
 		youtubeId: "_x4FIFXLMwE",
 	},
 	{
@@ -66,6 +77,7 @@ const testimonials = [
 			"Digital nomads and entrepreneurship in Malta — interview with Daniel Goebel.",
 		name: "Daniel Goebel",
 		role: "Interview · AIBC World",
+		logos: [{ name: "AIBC World", src: "/logos/aibc.png", tone: "dark" }],
 		youtubeId: "rF_vLRAPfss",
 	},
 ];
@@ -108,8 +120,10 @@ function Cta({ label, compact = false }: { label: string; compact?: boolean }) {
 			rel="noreferrer"
 			className={`poc-cta ${compact ? "poc-cta--compact" : ""}`}
 		>
+			<span className="poc-cta__icon">
+				<Icon name="whatsapp" className="h-5 w-5" />
+			</span>
 			<span>{label}</span>
-			<Icon name="arrowRight" className="h-5 w-5" />
 		</a>
 	);
 }
@@ -261,7 +275,7 @@ export default function PocHomepage({ locale }: Props) {
 				</div>
 			</section>
 
-			<section id="pricing" className="poc-section poc-offers">
+			<section id="offers" className="poc-section poc-offers">
 				<div className="poc-shell">
 					<SectionLabel>{c.s04kicker}</SectionLabel>
 					<div className="poc-heading-row">
@@ -272,22 +286,14 @@ export default function PocHomepage({ locale }: Props) {
 					</div>
 					<div className="poc-offer-grid">
 						{c.offers.map(
-							([name, price, rhythm, body, points, note, featured]) => (
+							([slug, name, label, body, points, note]) => (
 								<article
-									id={name.toLowerCase()}
-									className={`poc-offer-card ${featured ? "poc-offer-card--featured" : ""}`}
+									id={slug}
+									className="poc-offer-card"
 									key={name}
 								>
-									{featured ? (
-										<p className="poc-offer-card__tag">
-											{c.offerFeaturedLabel}
-										</p>
-									) : null}
+									<p className="poc-offer-card__tag">{label}</p>
 									<h3>{name}</h3>
-									<p className="poc-offer-card__price">
-										{price}
-										<span>{rhythm}</span>
-									</p>
 									<p>{body}</p>
 									<div>
 										{points.map((point) => (
@@ -431,6 +437,15 @@ export default function PocHomepage({ locale }: Props) {
 									</div>
 								) : null}
 								<blockquote>"{t.quote}"</blockquote>
+								{t.logos.length ? (
+									<div className="poc-testimonial-logos" aria-label={`${t.name} company logos`}>
+										{t.logos.map((logo) => (
+											<span className={`poc-testimonial-logo poc-testimonial-logo--${logo.tone}`} key={logo.name}>
+												<img src={logo.src} alt={logo.name} loading="lazy" />
+											</span>
+										))}
+									</div>
+								) : null}
 								<figcaption>
 									<strong>{t.name}</strong>
 									<span>{t.role}</span>
