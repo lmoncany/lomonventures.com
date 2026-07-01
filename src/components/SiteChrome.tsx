@@ -18,6 +18,7 @@ interface SiteChromeProps {
 }
 
 const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
+const tribeHref = "https://chat.whatsapp.com/JENTh7jL87qEF8layXTVWA?mode=gi_t";
 const offerNavItems: Record<SiteLocale, [string, string, string][]> = {
   en: [
     ["MVP in 30 days", "/offers#mvp-in-30-days", "Scope, build, handover"],
@@ -73,7 +74,7 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
           </div>
           <a href={localizedPath(locale, "/resources")}>{copy.resources}</a>
           <a href={localizedPath(locale, "/newsletter")}>{copy.newsletter}</a>
-          <a href="https://aitribe.io" target="_blank" rel="noreferrer" className="poc-nav__tribe">
+          <a href={tribeHref} target="_blank" rel="noreferrer" className="poc-nav__tribe">
             <span className="poc-nav__tribe-dot" />
             {copy.tribe}
           </a>
@@ -93,9 +94,11 @@ export function SiteHeader({ locale, theme, currentPath, onLocaleChange, onTheme
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.15c-.23.64-1.36 1.22-1.86 1.29-.48.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.61-.59-2.83-1.22-4.68-4.07-4.82-4.26-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03 1-2.34.23-.24.52-.3.7-.3.17 0 .35.002.5.01.17.007.39-.065.61.47.23.55.77 1.88.84 2.02.07.14.12.3.02.48-.09.19-.14.3-.28.46-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.17.28.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.27 1.4.28.14.44.12.6-.07.17-.19.7-.82.89-1.1.18-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.2.54.32.07.11.07.65-.16 1.29z"/>
             </svg>
           </a>
-          <a href={`${localizedPath(locale)}#brief`} className="poc-cta poc-cta--compact">
+          <a href={whatsappHref} target="_blank" rel="noreferrer" className="poc-cta poc-cta--compact">
+            <span className="poc-cta__icon poc-cta__icon--arrow">
+              <Icon name="arrowRight" className="h-4 w-4" />
+            </span>
             <span>{copy.cta}</span>
-            <Icon name="arrowRight" className="h-5 w-5" />
           </a>
         </div>
       </div>

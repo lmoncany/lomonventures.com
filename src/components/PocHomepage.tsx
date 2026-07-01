@@ -12,7 +12,6 @@ const tribeHref = "https://chat.whatsapp.com/JENTh7jL87qEF8layXTVWA?mode=gi_t";
 const seenOn = [
 	{ name: "TVM Malta", src: "/logos/tvm.webp" },
 	{ name: "France.tv", src: "/logos/france-tv.svg" },
-	{ name: "M6", src: "/logos/m6.svg" },
 	{ name: "French Touch Malta", src: "/logos/french-touch-malta.png" },
 	{ name: "CoCoHub", src: "/logos/cocohub.svg" },
 	{ name: "Flowr Agency", src: "/logos/flowr-agency.png" },
@@ -41,7 +40,7 @@ const testimonials = [
 	},
 	{
 		quote:
-			"Loic is a secret weapon in web dev. It was complete in 2 days, polished with animations, and built with clean code.",
+			"Loic is a secret weapon in web dev.",
 		name: "Teri Yu",
 		role: "Product @ OpenAI · Ex Vibely",
 		logos: [
@@ -131,6 +130,8 @@ function Cta({ label, compact = false }: { label: string; compact?: boolean }) {
 export default function PocHomepage({ locale }: Props) {
 	const c = homepageCopy[locale];
 	const finalCopy = finalPanelCopy[locale];
+	const heroLines = c.h1Lead.split("\n");
+	const [trustQuote, trustAttribution = ""] = c.trustLabel.split(" — ");
 
 	return (
 		<main>
@@ -149,15 +150,18 @@ export default function PocHomepage({ locale }: Props) {
 							<span className="poc-offer-chip__dot" />
 							{c.chip}
 						</div>
-						<h1 className="text-orange-600">
-							{c.h1Lead.split("\n").map((line, i, arr) => (
-								<span key={i}>
+						<h1>
+							{heroLines.map((line, i, arr) => (
+								<span
+									className={i === 0 ? "poc-hero__headline-base" : "poc-hero__headline-accent"}
+									key={i}
+								>
 									{line}
 									{i < arr.length - 1 ? <br /> : null}
 								</span>
 							))}
 							<br />
-							<span>{c.h1Accent}</span>
+							<span className="poc-hero__headline-rest">{c.h1Accent}</span>
 						</h1>
 						<p className="poc-hero__sub">
 							{c.sub}
@@ -191,7 +195,8 @@ export default function PocHomepage({ locale }: Props) {
 							</div>
 						</div>
 						<div className="poc-hero__trust">
-							<p>{c.trustLabel}</p>
+							<blockquote>{trustQuote}</blockquote>
+							{trustAttribution ? <p>— {trustAttribution}</p> : null}
 						</div>
 					</motion.div>
 				</div>
@@ -334,7 +339,12 @@ export default function PocHomepage({ locale }: Props) {
 									index === 0 ? (
 										<strong key={`${row[0]}-${index}`}>{cell}</strong>
 									) : (
-										<span key={`${row[0]}-${index}`}>{cell}</span>
+										<span
+											data-label={c.comparisonHeaders[index]}
+											key={`${row[0]}-${index}`}
+										>
+											{cell}
+										</span>
 									),
 								)}
 							</div>
