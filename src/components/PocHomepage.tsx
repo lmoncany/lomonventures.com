@@ -1,10 +1,12 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+	motion,
+	useReducedMotion,
+	useScroll,
+	useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 import Icon from "./Icon";
-import {
-	homepageCopy,
-	type SiteLocale,
-} from "../siteContent";
+import { homepageCopy, type SiteLocale } from "../siteContent";
 
 const phoneDisplay = "+33 6 58 92 87 52";
 const whatsappHref = `https://wa.me/33658928752?text=${encodeURIComponent("Hi, I have a product idea or business workflow I want to build.")}`;
@@ -33,12 +35,36 @@ const seenOn = [
 ];
 
 const pressMentions = [
-	["Digital nomad economy", "Podcast interview", "https://www.youtube.com/watch?v=aUAI-MXfwLM"],
-	["Malta ecosystem", "Ecosystem conversation", "https://www.youtube.com/watch?v=EgFaogkqjZE"],
-	["Remote work policy", "Work policy panel", "https://www.youtube.com/watch?v=PXLZGw0Z1-s"],
-	["TV / press interview", "Broadcast appearance", "https://www.youtube.com/watch?v=NpXw1Z_Ra_g"],
-	["Community building", "Community talk", "https://www.youtube.com/watch?v=YJ-v5beLHig"],
-	["Entrepreneurship in Malta", "Founder interview", "https://www.youtube.com/watch?v=rF_vLRAPfss"],
+	[
+		"Digital nomad economy",
+		"Podcast interview",
+		"https://www.youtube.com/watch?v=aUAI-MXfwLM",
+	],
+	[
+		"Malta ecosystem",
+		"Ecosystem conversation",
+		"https://www.youtube.com/watch?v=EgFaogkqjZE",
+	],
+	[
+		"Remote work policy",
+		"Work policy panel",
+		"https://www.youtube.com/watch?v=PXLZGw0Z1-s",
+	],
+	[
+		"TV / press interview",
+		"Broadcast appearance",
+		"https://www.youtube.com/watch?v=NpXw1Z_Ra_g",
+	],
+	[
+		"Community building",
+		"Community talk",
+		"https://www.youtube.com/watch?v=YJ-v5beLHig",
+	],
+	[
+		"Entrepreneurship in Malta",
+		"Founder interview",
+		"https://www.youtube.com/watch?v=rF_vLRAPfss",
+	],
 ];
 
 const portfolioTitle: Record<SiteLocale, string> = {
@@ -47,10 +73,16 @@ const portfolioTitle: Record<SiteLocale, string> = {
 	it: "I nostri ultimi progetti",
 };
 
-const heroHeadlineContent: Record<SiteLocale, { lead: string; accent: string; rest: string }> = {
-	en: { lead: "We build", accent: "tools that fit", rest: "your business. Not the other way around." },
-	fr: { lead: "On construit", accent: "les outils adaptes", rest: "a votre business. Pas l'inverse." },
-	it: { lead: "Costruiamo", accent: "strumenti adatti", rest: "al tuo business. Non il contrario." },
+const heroHeadlineContent: Record<SiteLocale, { lead: string }> = {
+	en: {
+		lead: "Your business evolved. Your software didn't. We fix that.",
+	},
+	fr: {
+		lead: "Votre entreprise a évolué. Vos logiciels n'ont pas suivis. On est la.",
+	},
+	it: {
+		lead: "Costruiamo al tuo business. Non il contrario.",
+	},
 };
 
 const fitCardTitles: Record<SiteLocale, { yes: string; no: string }> = {
@@ -72,8 +104,7 @@ const testimonials = [
 		youtubeId: null,
 	},
 	{
-		quote:
-			"Loic is a secret weapon in web dev.",
+		quote: "Loic is a secret weapon in web dev.",
 		name: "Teri Yu",
 		role: "Product @ OpenAI · Ex Vibely",
 		logos: [
@@ -94,20 +125,23 @@ const testimonials = [
 		quote: "Luc Thilliez talks about his experience working with Flowr Agency.",
 		name: "Luc Thilliez",
 		role: "Client · Flowr Agency",
-		logos: [{ name: "Flowr Agency", src: "/logos/flowr-agency.png", tone: "light" }],
+		logos: [
+			{ name: "Flowr Agency", src: "/logos/flowr-agency.png", tone: "light" },
+		],
 		youtubeId: "1DJwVajzCbo",
 	},
 	{
 		quote: "Amin Lams shares his experience working with the agency.",
 		name: "Amin Lams",
 		role: "Client · Flowr Agency",
-		logos: [{ name: "Flowr Agency", src: "/logos/flowr-agency.png", tone: "light" }],
+		logos: [
+			{ name: "Flowr Agency", src: "/logos/flowr-agency.png", tone: "light" },
+		],
 		youtubeId: "_x4FIFXLMwE",
 	},
 	{
 		quote:
 			"Digital nomads and entrepreneurship in Malta — interview with Daniel Goebel.",
-		name: "Daniel Goebel",
 		role: "Interview · AIBC World",
 		logos: [{ name: "AIBC World", src: "/logos/aibc.png", tone: "dark" }],
 		youtubeId: "rF_vLRAPfss",
@@ -121,20 +155,21 @@ const socialLinks = [
 	["GitHub", "https://github.com/lmoncany", "gh"],
 ];
 
-const finalPanelCopy: Record<SiteLocale, { joinPrefix: string; note: string }> = {
-	en: {
-		joinPrefix: "Join the",
-		note: "No form, no funnel. Message me directly, or join the community if you want to stay close to the AI builders/operators circle.",
-	},
-	fr: {
-		joinPrefix: "Rejoindre",
-		note: "Pas de formulaire, pas de tunnel. Écrivez-moi directement, ou rejoignez la communauté pour rester proche des builders et opérateurs IA.",
-	},
-	it: {
-		joinPrefix: "Entra nella",
-		note: "Nessun form, nessun funnel. Scrivimi direttamente, oppure entra nella community se vuoi restare vicino a builder e operatori AI.",
-	},
-};
+const finalPanelCopy: Record<SiteLocale, { joinPrefix: string; note: string }> =
+	{
+		en: {
+			joinPrefix: "Join the",
+			note: "No form, no funnel. Message me directly, or join the community if you want to stay close to the AI builders/operators circle.",
+		},
+		fr: {
+			joinPrefix: "Rejoindre",
+			note: "Pas de formulaire, pas de tunnel. Écrivez-moi directement, ou rejoignez la communauté pour rester proche des builders et opérateurs IA.",
+		},
+		it: {
+			joinPrefix: "Entra nella",
+			note: "Nessun form, nessun funnel. Scrivimi direttamente, oppure entra nella community se vuoi restare vicino a builder e operatori AI.",
+		},
+	};
 
 interface Props {
 	locale: SiteLocale;
@@ -216,8 +251,16 @@ export default function PocHomepage({ locale }: Props) {
 			/>
 			<section className="poc-hero" ref={heroRef}>
 				<motion.div className="poc-hero__grid" style={{ y: heroGridY }} />
-				<motion.div className="poc-hero__glow poc-hero__glow--one" style={{ y: heroGlowY }} aria-hidden="true" />
-				<motion.div className="poc-hero__glow poc-hero__glow--two" style={{ y: heroContentY }} aria-hidden="true" />
+				<motion.div
+					className="poc-hero__glow poc-hero__glow--one"
+					style={{ y: heroGlowY }}
+					aria-hidden="true"
+				/>
+				<motion.div
+					className="poc-hero__glow poc-hero__glow--two"
+					style={{ y: heroContentY }}
+					aria-hidden="true"
+				/>
 				<div className="poc-hero__mesh" aria-hidden="true" />
 				<span className="poc-hero__bleed" aria-hidden="true">
 					30
@@ -233,13 +276,7 @@ export default function PocHomepage({ locale }: Props) {
 							<span className="poc-offer-chip__dot" />
 							{c.chip}
 						</div>
-						<h1 className="poc-hero__headline">
-							<span className="poc-hero__headline-line">
-								{heroHeadline.lead} <span className="poc-hero__headline-accent">{heroHeadline.accent}</span>
-							</span>
-							<br />
-							<span className="poc-hero__headline-rest">{heroHeadline.rest}</span>
-						</h1>
+						<h1 className="">{heroHeadline.lead} </h1>
 						<p className="poc-hero__sub">
 							{c.sub}
 							<strong>{c.subHighlight}</strong>.
@@ -249,7 +286,9 @@ export default function PocHomepage({ locale }: Props) {
 							initial="initial"
 							whileInView="whileInView"
 							viewport={{ once: true, amount: 0.8 }}
-							variants={{ whileInView: { transition: { staggerChildren: 0.08 } } }}
+							variants={{
+								whileInView: { transition: { staggerChildren: 0.08 } },
+							}}
 						>
 							{c.proof.map((item) => (
 								<motion.span key={item} variants={cardReveal()}>
@@ -285,7 +324,10 @@ export default function PocHomepage({ locale }: Props) {
 				</div>
 			</section>
 
-			<section id="portfolio" className="poc-section poc-case-section poc-section--pattern">
+			<section
+				id="portfolio"
+				className="poc-section poc-case-section poc-section--pattern"
+			>
 				<div className="poc-shell">
 					<motion.div className="poc-case-section__intro" {...sectionReveal}>
 						<SectionLabel>{c.s06kicker}</SectionLabel>
@@ -398,7 +440,10 @@ export default function PocHomepage({ locale }: Props) {
 				</div>
 			</section>
 
-			<section id="how-it-works" className="poc-section poc-process poc-section--pattern poc-section--pattern-strong">
+			<section
+				id="how-it-works"
+				className="poc-section poc-process poc-section--pattern poc-section--pattern-strong"
+			>
 				<div className="poc-shell">
 					<SectionLabel>{c.s03kicker}</SectionLabel>
 					<div className="poc-heading-row">
@@ -427,7 +472,10 @@ export default function PocHomepage({ locale }: Props) {
 				</div>
 			</section>
 
-			<section id="offers" className="poc-section poc-offers poc-section--pattern poc-section--pattern-dark">
+			<section
+				id="offers"
+				className="poc-section poc-offers poc-section--pattern poc-section--pattern-dark"
+			>
 				<div className="poc-shell">
 					<SectionLabel>{c.s04kicker}</SectionLabel>
 					<div className="poc-heading-row">
@@ -437,31 +485,29 @@ export default function PocHomepage({ locale }: Props) {
 						<p>{c.s04sub}</p>
 					</div>
 					<div className="poc-offer-grid">
-						{c.offers.map(
-							([slug, name, label, body, points, note]) => (
-								<motion.article
-									id={slug}
-									className="poc-offer-card"
-									key={name}
-									{...cardReveal(0.05)}
-									whileHover={prefersReducedMotion ? undefined : { y: -8 }}
-								>
-									<p className="poc-offer-card__tag">{label}</p>
-									<h3>{name}</h3>
-									<p>{body}</p>
-									<div>
-										{points.map((point) => (
-											<span key={point}>
-												<Icon name="check" className="h-4 w-4" />
-												{point}
-											</span>
-										))}
-									</div>
-									<small>{note}</small>
-									<Cta label={c.formSubmit} compact />
-								</motion.article>
-							),
-						)}
+						{c.offers.map(([slug, name, label, body, points, note]) => (
+							<motion.article
+								id={slug}
+								className="poc-offer-card"
+								key={name}
+								{...cardReveal(0.05)}
+								whileHover={prefersReducedMotion ? undefined : { y: -8 }}
+							>
+								<p className="poc-offer-card__tag">{label}</p>
+								<h3>{name}</h3>
+								<p>{body}</p>
+								<div>
+									{points.map((point) => (
+										<span key={point}>
+											<Icon name="check" className="h-4 w-4" />
+											{point}
+										</span>
+									))}
+								</div>
+								<small>{note}</small>
+								<Cta label={c.formSubmit} compact />
+							</motion.article>
+						))}
 					</div>
 				</div>
 			</section>
@@ -558,9 +604,15 @@ export default function PocHomepage({ locale }: Props) {
 								) : null}
 								<blockquote>"{t.quote}"</blockquote>
 								{t.logos.length ? (
-									<div className="poc-testimonial-logos" aria-label={`${t.name} company logos`}>
+									<div
+										className="poc-testimonial-logos"
+										aria-label={`${t.name} company logos`}
+									>
 										{t.logos.map((logo) => (
-											<span className={`poc-testimonial-logo poc-testimonial-logo--${logo.tone}`} key={logo.name}>
+											<span
+												className={`poc-testimonial-logo poc-testimonial-logo--${logo.tone}`}
+												key={logo.name}
+											>
 												<img src={logo.src} alt={logo.name} loading="lazy" />
 											</span>
 										))}
@@ -711,12 +763,24 @@ export default function PocHomepage({ locale }: Props) {
 						<p>{c.briefIntro}</p>
 					</div>
 					<div className="poc-whatsapp-panel">
-						<a className="poc-whatsapp-panel__primary" href={whatsappHref} target="_blank" rel="noreferrer">
+						<a
+							className="poc-whatsapp-panel__primary"
+							href={whatsappHref}
+							target="_blank"
+							rel="noreferrer"
+						>
 							<span>{c.formSubmit}</span>
-							<strong>{c.whatsappLabel} {phoneDisplay}</strong>
+							<strong>
+								{c.whatsappLabel} {phoneDisplay}
+							</strong>
 							<WhatsappGlyph className="h-6 w-6" />
 						</a>
-						<a className="poc-whatsapp-panel__secondary" href={tribeHref} target="_blank" rel="noreferrer">
+						<a
+							className="poc-whatsapp-panel__secondary"
+							href={tribeHref}
+							target="_blank"
+							rel="noreferrer"
+						>
 							<span>{finalCopy.joinPrefix}</span>
 							<strong>AI Tribe</strong>
 							<Icon name="external" className="h-5 w-5" />
